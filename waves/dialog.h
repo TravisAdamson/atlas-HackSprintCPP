@@ -2,14 +2,17 @@
 #define DIALOG_H
 
 #include <QDialog>
-#include "ui_try.h"  // This should be the header file generated from try.ui
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class Dialog; }
+QT_END_NAMESPACE
 
 class Dialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    Dialog(QWidget *parent = nullptr);
+    explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
 private slots:
@@ -20,8 +23,9 @@ private slots:
 
 private:
     void toggleButtonText(QPushButton *button);
+    void checkAllButtons();  // Add this line
 
-    Ui::Dialog *ui;  // Pointer to the UI class
+    Ui::Dialog *ui;
 };
 
 #endif // DIALOG_H

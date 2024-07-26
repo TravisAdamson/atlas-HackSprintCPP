@@ -387,7 +387,6 @@ compiler_moc_header_make_all: moc_dialog.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_dialog.cpp
 moc_dialog.cpp: dialog.h \
-		ui_try.h \
 		moc_predefs.h \
 		/usr/bin/moc
 	/usr/bin/moc $(DEFINES) --include /home/matt/atlas-HackSprintCPP/waves/moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/matt/atlas-HackSprintCPP/waves -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I/usr/include/c++/14.1.1 -I/usr/include/c++/14.1.1/x86_64-pc-linux-gnu -I/usr/include/c++/14.1.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include-fixed -I/usr/include dialog.h -o moc_dialog.cpp
@@ -413,8 +412,7 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-main.o: main.cpp dialog.h \
-		ui_try.h
+main.o: main.cpp dialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 dialog.o: dialog.cpp dialog.h \
