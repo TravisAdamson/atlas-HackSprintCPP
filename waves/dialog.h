@@ -2,10 +2,14 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QPushButton>
+#include <QMap>
+#include <QTimer>
+#include <QLabel> // Include QLabel for scoreLabel
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class Dialog; }
-QT_END_NAMESPACE
+namespace Ui {
+class Dialog;
+}
 
 class Dialog : public QDialog
 {
@@ -16,16 +20,24 @@ public:
     ~Dialog();
 
 private slots:
-    void on_pushButton_1_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_3_clicked();
-    void on_pushButton_4_clicked();
+    void onButtonClicked();
+    void resetButtons();
+    void checkForMatch();
 
 private:
-    void toggleButtonText(QPushButton *button);
-    void checkAllButtons();  // Add this line
+    void assignValuesToButtons();
+    void toggleButtonValue(QPushButton *button);
+    void updateScore();
 
     Ui::Dialog *ui;
+    QLabel *scoreLabel;  // Add this line to declare scoreLabel
+    QPushButton *firstClickedButton;
+    QPushButton *secondClickedButton;
+    QMap<QPushButton*, int> buttonValues;
+    QTimer *resetTimer;
+    QList<QPushButton*> buttons;
+    int points;
+    bool canSelect;  // Add this line to declare the canSelect field
 };
 
 #endif // DIALOG_H
