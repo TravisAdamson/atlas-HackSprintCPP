@@ -153,6 +153,7 @@ void Dialog::checkForMatch()
 }
 
 
+
 void Dialog::resetButtons()
 {
     // Reset all buttons
