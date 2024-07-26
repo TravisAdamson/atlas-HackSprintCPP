@@ -41,8 +41,20 @@ void Dialog::on_pushButton_4_clicked()
 
 void Dialog::toggleButtonText(QPushButton *button)
 {
-    if (button->text() == "PB1")
+    QString currentText = button->text();
+
+    // Toggle between the three states
+    if (currentText == "!NOT CLICKED!") {
         button->setText("Clicked!");
-    else
-        button->setText("PB1");
+    } 
+    else if (currentText == "Clicked!") {
+        button->setText("Click");
+    } 
+    else if (currentText == "Click") {
+        button->setText("!NOT CLICKED!");
+    } 
+    else {
+        // Optional: Handle unexpected text
+        button->setText("!NOT CLICKED!");
+    }
 }
