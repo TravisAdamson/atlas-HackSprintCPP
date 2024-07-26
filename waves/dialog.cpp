@@ -23,7 +23,7 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog),
     firstClickedButton(nullptr),
     secondClickedButton(nullptr),
-    resetTimer(new QTimer(this)),
+    resetTimer(new QTimer(this)),  // Remove or comment out
     points(0),
     scoreLabel(nullptr),
     canSelect(true)  // Initialize selection state
@@ -53,7 +53,7 @@ Dialog::Dialog(QWidget *parent) :
         qDebug() << "Error: Number of buttons does not match NUM_BUTTONS!";
     }
 
-    // Assign random values to buttons
+    // Assign values to buttons and show them immediately
     assignValuesToButtons();
 
     // Connect all buttons to the same slot
@@ -61,13 +61,15 @@ Dialog::Dialog(QWidget *parent) :
         connect(button, &QPushButton::clicked, this, &Dialog::onButtonClicked);
     }
 
-    // Set up the reset timer
-    connect(resetTimer, &QTimer::timeout, this, &Dialog::resetButtons);
-    resetTimer->setSingleShot(true);
+    // Set up the reset timer - Remove or comment out
+    // connect(resetTimer, &QTimer::timeout, this, &Dialog::resetButtons);
+    // resetTimer->setSingleShot(true);
 
     // Update score label
     updateScore();
 }
+
+
 
 Dialog::~Dialog()
 {
@@ -87,7 +89,7 @@ void Dialog::assignValuesToButtons()
     QRandomGenerator rng;
     std::shuffle(values.begin(), values.end(), rng);
 
-    // Assign values to buttons
+    // Assign values to buttons and set text immediately
     for (int i = 0; i < buttons.size(); ++i) {
         QPushButton* button = buttons[i];
         if (button == nullptr) {
@@ -96,7 +98,7 @@ void Dialog::assignValuesToButtons()
         }
         int value = values[i];
         buttonValues[button] = value;
-        button->setText("");
+        button->setText(valueTexts[value - 1]);
     }
 }
 
@@ -138,8 +140,8 @@ void Dialog::checkForMatch()
             points++;
             updateScore();
         } else {
-            // Start the timer to reset all buttons
-            resetTimer->start(1000);
+            // No need to start the timer anymore
+            // resetTimer->start(1000);
         }
 
         firstClickedButton = nullptr;
@@ -149,6 +151,7 @@ void Dialog::checkForMatch()
         canSelect = true;
     }
 }
+
 
 void Dialog::resetButtons()
 {
