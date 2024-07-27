@@ -8,11 +8,18 @@
 #include <QDebug>
 
 const QStringList correctValueTexts = {
+    "correct", "correct", "correct", "correct", "correct", "correct",
+    "correct", "correct", "correct", "correct", "correct", "correct",
+    "correct", "correct", "correct", "correct", "correct", "correct",
+    "correct", "correct", "correct", "correct"
+};
+
+/* const QStringList correctValueTexts = {
     "char", "float", "double", "short", "long", "long long",
     "unsigned int", "unsigned short", "unsigned long", "unsigned long long",
     "long double", "array", "pointer", "reference", "function",
     "struct", "union", "enum", "typedef", "class", "bool", "int"
-};
+}; */
 
 /* const QStringList incorrectValueTexts = {
     "void", "QStringList", "namespace", "template", "pattern matching", "decimal",
@@ -21,8 +28,9 @@ const QStringList correctValueTexts = {
  */
 
 const QStringList incorrectValueTexts = {
-    "var", "var", "var", "var", "var", "var",
-    "var", "var", "var", "var", "var", "var", "var", "var"
+    "invalid", "invalid", "invalid", "invalid", "invalid", "invalid",
+    "invalid", "invalid", "invalid", "invalid", "invalid", "invalid",
+    "invalid", "invalid"
 };
 
 const int NUM_BUTTONS = 30;
@@ -35,34 +43,29 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // Initialize the score label
-    scoreLabel = ui->scoreLabel;
-    if (scoreLabel == nullptr) {
-        qDebug() << "Error: scoreLabel is not initialized!";
-    }
-
-    // Initialize the list of buttons
     initializeButtons();
-
-    // Assign values to buttons
     assignValuesToButtons();
 
-    // Connect all buttons to the same slot
     for (QPushButton* button : buttons) {
         connect(button, &QPushButton::clicked, this, &Dialog::onButtonClicked);
     }
 
-    // Setup timers
     setupTimers();
-
-    // Update score label
     updateScore();
+
+    // Connect the reset button
+    connect(ui->resetButton, &QPushButton::clicked, this, &Dialog::resetGame);
 }
 
 Dialog::~Dialog()
 {
     delete ui;
 }
+
+
+
+
+
 
 void Dialog::initializeButtons()
 {
@@ -84,10 +87,15 @@ void Dialog::initializeButtons()
 
 void Dialog::assignValuesToButtons()
 {
+    // Combine correct and incorrect values
     QStringList allValues = correctValueTexts + incorrectValueTexts;
+    /* StringList allValues = correctValueTexts2; */
+
+    // Shuffle the values
     QRandomGenerator rng;
     std::shuffle(allValues.begin(), allValues.end(), rng);
 
+    // Assign shuffled values to buttons
     for (int i = 0; i < buttons.size(); ++i) {
         QPushButton* button = buttons[i];
         if (button == nullptr) {
@@ -95,10 +103,60 @@ void Dialog::assignValuesToButtons()
             continue;
         }
         QString value = allValues[i];
-        buttonValues[button] = value;
-        button->setText(value);
+        buttonValues[button] = value;  // Update internal value map
+        button->setText(value);        // Update button text
+
+        // Debugging output
+        qDebug() << "Button" << i << "assigned value:" << value;
     }
 }
+
+void Dialog::resetGame()
+{
+    qDebug() << "Resetting the game"; // Debugging output
+
+    // Reset the score
+    points = 0;
+    updateScore();
+
+    // Reset all button styles and enable them
+    for (QPushButton* button : buttons) {
+        button->setStyleSheet("");  // Clear any existing styles
+        button->setDisabled(false); // Re-enable the button
+    }
+
+    // Shuffle and assign new values to buttons
+    assignValuesToButtons();
+
+    // Debug output to confirm new values
+    for (QPushButton* button : buttons) {
+        qDebug() << "Button text after reset:" << button->text();
+    }
+
+    // Restart the timer if needed
+    if (disableButtonTimer) {
+        disableButtonTimer->start(2000); // Restart the timer with the desired interval
+    }
+
+    // Clear status message
+    if (ui->statusLabel) {
+        ui->statusLabel->clear();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void Dialog::onButtonClicked()
 {
@@ -193,7 +251,8 @@ void Dialog::checkWinCondition()
 
     if (allCorrectButtonsGreenOrBlue) {
         if (ui->statusLabel) {
-            ui->statusLabel->setText("YOU WIN!!");
+            QString winMessage = QString("YOU WIN!! Your score is: %1").arg(points);
+            ui->statusLabel->setText(winMessage);
             qDebug() << "Win condition met.";
         } else {
             qDebug() << "Error: statusLabel is not available!";
@@ -201,6 +260,7 @@ void Dialog::checkWinCondition()
         disableButtonTimer->stop();  // Stop the timer
     }
 }
+
 
 
 
@@ -228,3 +288,4 @@ void Dialog::checkLoseCondition()
         disableButtonTimer->stop();  // Stop the timer
     }
 }
+

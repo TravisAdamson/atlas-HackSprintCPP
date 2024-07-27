@@ -3,9 +3,11 @@
 
 #include <QDialog>
 #include <QPushButton>
-#include <QMap>
 #include <QTimer>
-#include <QLabel> // Include QLabel for scoreLabel
+#include <QLabel>
+#include <QMap>          // Include QMap
+#include <QStringList>  // Include QStringList
+#include <QRandomGenerator> // Include QRandomGenerator for shuffling
 
 namespace Ui {
 class Dialog;
@@ -21,22 +23,23 @@ public:
 
 private slots:
     void onButtonClicked();
+    void resetGame();  // Declare the slot for resetting the game
+
+private:
+    void initializeButtons();
+    void assignValuesToButtons();
+    void handleButtonClick(QPushButton *button);
     void updateScore();
+    void setupTimers();
     void disableRandomButton();
     void checkWinCondition();
     void checkLoseCondition();
 
-private:
-    void assignValuesToButtons();
-    void handleButtonClick(QPushButton *button);
-    void initializeButtons();
-    void setupTimers();
-
     Ui::Dialog *ui;
-    QLabel *scoreLabel;  // Score label
-    QMap<QPushButton*, QString> buttonValues; // Map to store button texts
-    QList<QPushButton*> buttons;  // List of buttons
-    QTimer *disableButtonTimer; // Timer to disable random button
+    QList<QPushButton*> buttons;
+    QMap<QPushButton*, QString> buttonValues;
+    QTimer *disableButtonTimer;
+    QLabel *scoreLabel;
     int points;
 };
 
