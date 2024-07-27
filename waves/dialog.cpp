@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QRandomGenerator>
 #include <QDebug>
+#include <QMessageBox>
 
 const QStringList correctValueTexts = {
     "correct", "correct", "correct", "correct", "correct", "correct",
@@ -49,7 +50,7 @@ Dialog::Dialog(QWidget *parent) :
     for (QPushButton* button : buttons) {
         connect(button, &QPushButton::clicked, this, &Dialog::onButtonClicked);
     }
-
+    scoreLabel = 0;
     setupTimers();
     updateScore();
 
@@ -234,32 +235,27 @@ void Dialog::disableRandomButton()
 void Dialog::checkWinCondition()
 {
     bool allCorrectButtonsGreenOrBlue = true;
-    
-    // Check if all correct buttons are either green or blue
+
     for (QPushButton* button : buttons) {
         QString style = button->styleSheet();
         QString text = button->text();
 
         if (correctValueTexts.contains(text)) {
-            // Correct button should be green or blue
             if (!(style.contains("background-color: green;") || style.contains("background-color: blue;"))) {
                 allCorrectButtonsGreenOrBlue = false;
-                break;  // Stop checking if any correct button is not green or blue
+                break;
             }
         }
     }
 
     if (allCorrectButtonsGreenOrBlue) {
-        if (ui->statusLabel) {
-            QString winMessage = QString("YOU WIN!! Your score is: %1").arg(points);
-            ui->statusLabel->setText(winMessage);
-            qDebug() << "Win condition met.";
-        } else {
-            qDebug() << "Error: statusLabel is not available!";
-        }
-        disableButtonTimer->stop();  // Stop the timer
+        QString winMessage = QString("YOU WIN!! Your score is: %1").arg(points);
+        QMessageBox::information(this, "Congratulations!", winMessage);
+        disableButtonTimer->stop();
     }
 }
+
+
 
 
 

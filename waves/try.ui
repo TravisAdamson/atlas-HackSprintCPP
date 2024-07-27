@@ -81,19 +81,6 @@
     <string>PB4</string>
    </property>
   </widget>
-  <widget class="QLabel" name="scoreLabel">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>80</y>
-     <width>111</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Score:</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
@@ -435,8 +422,8 @@
   <widget class="QLabel" name="statusLabel">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>380</y>
+     <x>30</x>
+     <y>390</y>
      <width>681</width>
      <height>51</height>
     </rect>
