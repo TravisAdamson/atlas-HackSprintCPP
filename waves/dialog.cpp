@@ -187,11 +187,8 @@ void Dialog::handleButtonClick(QPushButton *button)
 
 void Dialog::updateScore()
 {
-    if (scoreLabel) {
+    if (scoreLabel)
         scoreLabel->setText("Score: " + QString::number(points));
-    } else {
-        qDebug() << "Error: scoreLabel is not available!";
-    }
 }
 
 void Dialog::setupTimers()
@@ -264,22 +261,25 @@ void Dialog::checkLoseCondition()
 {
     bool allIncorrectButtonsColored = true;
     
-    for (QPushButton* button : buttons) {
+    for (QPushButton* button : buttons)
+    {
         QString style = button->styleSheet();
-        if (incorrectValueTexts.contains(buttonValues[button])) {
+        if (incorrectValueTexts.contains(buttonValues[button]))
+        {
             // Check if the button is either red or blue
-            if (!(style.contains("background-color: red;") || style.contains("background-color: blue;"))) {
+            if (!(style.contains("background-color: red;") || style.contains("background-color: blue;")))
+            {
                 allIncorrectButtonsColored = false;
                 break;  // If any incorrect button is not red or blue, stop checking
             }
         }
     }
     
-    if (allIncorrectButtonsColored) {
-        if (ui->statusLabel) {
+    if (allIncorrectButtonsColored)
+    {
+        if (ui->statusLabel)
+        {
             ui->statusLabel->setText("SORRY YOU LOOSE TRY AGAIN!!");
-        } else {
-            qDebug() << "Error: statusLabel is not available!";
         }
         disableButtonTimer->stop();  // Stop the timer
     }
