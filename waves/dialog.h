@@ -21,23 +21,23 @@ public:
 
 private slots:
     void onButtonClicked();
-    void resetButtons();
-    void checkForMatch();
+    void updateScore();
+    void disableRandomButton();
+    void checkWinCondition();
+    void checkLoseCondition();
 
 private:
     void assignValuesToButtons();
-    void toggleButtonValue(QPushButton *button);
-    void updateScore();
+    void handleButtonClick(QPushButton *button);
+    void initializeButtons();
+    void setupTimers();
 
     Ui::Dialog *ui;
-    QLabel *scoreLabel;  // Add this line to declare scoreLabel
-    QPushButton *firstClickedButton;
-    QPushButton *secondClickedButton;
-    QMap<QPushButton*, int> buttonValues;
-    QTimer *resetTimer;
-    QList<QPushButton*> buttons;
+    QLabel *scoreLabel;  // Score label
+    QMap<QPushButton*, QString> buttonValues; // Map to store button texts
+    QList<QPushButton*> buttons;  // List of buttons
+    QTimer *disableButtonTimer; // Timer to disable random button
     int points;
-    bool canSelect;  // Add this line to declare the canSelect field
 };
 
 #endif // DIALOG_H
