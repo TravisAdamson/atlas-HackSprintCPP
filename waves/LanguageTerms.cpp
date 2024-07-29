@@ -1,5 +1,4 @@
 #include "LanguageTerms.h"
-
 #include "LanguageTerms.h"
 
 const QStringList CPlusPlusTerms = {
@@ -177,7 +176,6 @@ const QStringList PerlTerms = {
     "sort", "reverse", "scalar", "ref", "bless", "die", "warn", "eval", "BEGIN", "END",
     "use", "strict", "warnings", "return", "continue", "defined", "exists", "delete"
 };
-
 
 QStringList correctValueTexts = {"none"};
 
