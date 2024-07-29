@@ -69,7 +69,8 @@ void Dialog::assignValuesToButtons()
 
 	correctValueTexts = AllTerms[which_list];
 	QString value = Titles[which_list];
-	ui->langName->setText(Titles[which_list]);
+	QString puzzleText = "Find the terms related to " + Titles[which_list];
+    ui->langName->setText(puzzleText);
     // Assign shuffled values to buttons
     for (int i = 0; i < buttons.size(); ++i) {
         QPushButton* button = buttons[i];
