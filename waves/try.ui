@@ -158,6 +158,9 @@
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
+   <property name="indent">
+    <number>0</number>
+   </property>
   </widget>
   <widget class="QLabel" name="langName">
    <property name="geometry">
@@ -188,7 +191,7 @@
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
    <property name="indent">
-    <number>-1</number>
+    <number>0</number>
    </property>
   </widget>
   <widget class="QPushButton" name="rerollButton">
