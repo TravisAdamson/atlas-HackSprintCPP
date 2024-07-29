@@ -169,13 +169,17 @@ void Dialog::checkWinCondition()
         QMessageBox winMsgBox(this);
         winMsgBox.setText(winMessage);
         winMsgBox.setWindowTitle("Congratulations!");
-        winMsgBox.setStandardButtons(QMessageBox::Ok);
-        winMsgBox.setButtonText(QMessageBox::Ok, "Play Again");
 
-        // Connect the 'OK' button of the message box to resetGame slot
-        connect(winMsgBox.button(QMessageBox::Ok), &QPushButton::clicked, this, &Dialog::resetGame);
+        // Add custom buttons
+        QPushButton *playAgainButton = winMsgBox.addButton("Play Again", QMessageBox::ActionRole);
+        QPushButton *exitButton = winMsgBox.addButton("Exit", QMessageBox::RejectRole);
+
+        // Connect the buttons to slots
+        connect(playAgainButton, &QPushButton::clicked, this, &Dialog::resetGame);
+        connect(exitButton, &QPushButton::clicked, QApplication::instance(), &QApplication::quit);
 
         winMsgBox.exec();
     }
 }
+
 
