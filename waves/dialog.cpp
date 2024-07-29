@@ -30,7 +30,7 @@ Dialog::Dialog(QWidget *parent) :
     updateScore();
 
     // Connect the reset button
-    connect(ui->resetButton, &QPushButton::clicked, this, &Dialog::resetGame);
+    connect(ui->rerollButton, &QPushButton::clicked, this, &Dialog::resetGame);
 }
 
 Dialog::~Dialog()
@@ -69,7 +69,7 @@ void Dialog::assignValuesToButtons()
 
 	correctValueTexts = AllTerms[which_list];
 	QString value = Titles[which_list];
-	ui->puzzle->setText(Titles[which_list]);
+	ui->langName->setText(Titles[which_list]);
     // Assign shuffled values to buttons
     for (int i = 0; i < buttons.size(); ++i) {
         QPushButton* button = buttons[i];
@@ -108,11 +108,6 @@ void Dialog::resetGame()
     // Debug output to confirm new values
     for (QPushButton* button : buttons) {
         qDebug() << "Button text after reset:" << button->text();
-    }
-
-    // Clear status message
-    if (ui->statusLabel) {
-        ui->statusLabel->clear();
     }
 }
 
