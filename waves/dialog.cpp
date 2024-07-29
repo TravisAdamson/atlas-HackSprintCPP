@@ -164,7 +164,7 @@ void Dialog::checkWinCondition()
     }
 
     if (allCorrectButtonsGreenOrBlue) {
-        QString winMessage = QString("YOU WIN!! Your score is: %1").arg(points);
+        QString winMessage = QString("Your score is: %1").arg(points);
 
         QMessageBox winMsgBox(this);
         winMsgBox.setText(winMessage);
