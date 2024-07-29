@@ -466,7 +466,7 @@
      <string notr="true">background-color: rgb(38, 162, 105)</string>
     </property>
     <property name="text">
-     <string>Play Again</string>
+     <string>Reroll</string>
     </property>
    </widget>
    <widget class="QLabel" name="statusLabel">
@@ -511,7 +511,7 @@
     <rect>
      <x>530</x>
      <y>10</y>
-     <width>201</width>
+     <width>151</width>
      <height>51</height>
     </rect>
    </property>
@@ -524,6 +524,9 @@
    </property>
    <property name="text">
     <string>C:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignJustify|Qt::AlignVCenter</set>
    </property>
   </widget>
   <zorder>backgroundWidget</zorder>
