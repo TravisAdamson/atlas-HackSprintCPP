@@ -165,6 +165,17 @@ void Dialog::checkWinCondition()
 
     if (allCorrectButtonsGreenOrBlue) {
         QString winMessage = QString("YOU WIN!! Your score is: %1").arg(points);
-        QMessageBox::information(this, "Congratulations!", winMessage);
+
+        QMessageBox winMsgBox(this);
+        winMsgBox.setText(winMessage);
+        winMsgBox.setWindowTitle("Congratulations!");
+        winMsgBox.setStandardButtons(QMessageBox::Ok);
+        winMsgBox.setButtonText(QMessageBox::Ok, "Play Again");
+
+        // Connect the 'OK' button of the message box to resetGame slot
+        connect(winMsgBox.button(QMessageBox::Ok), &QPushButton::clicked, this, &Dialog::resetGame);
+
+        winMsgBox.exec();
     }
 }
+
