@@ -9,32 +9,6 @@
 #include <QDebug>
 #include <QMessageBox>
 
-const QStringList correctValueTexts = {
-    "correct", "correct", "correct", "correct", "correct", "correct",
-    "correct", "correct", "correct", "correct", "correct", "correct",
-    "correct", "correct", "correct", "correct", "correct", "correct",
-    "correct", "correct", "correct", "correct"
-};
-
-/* const QStringList correctValueTexts = {
-    "char", "float", "double", "short", "long", "long long",
-    "unsigned int", "unsigned short", "unsigned long", "unsigned long long",
-    "long double", "array", "pointer", "reference", "function",
-    "struct", "union", "enum", "typedef", "class", "bool", "int"
-}; */
-
-/* const QStringList incorrectValueTexts = {
-    "void", "QStringList", "namespace", "template", "pattern matching", "decimal",
-    "string", "list", "dict", "tuple", "option", "complex", "record", "var"
-};
- */
-
-const QStringList incorrectValueTexts = {
-    "invalid", "invalid", "invalid", "invalid", "invalid", "invalid",
-    "invalid", "invalid", "invalid", "invalid", "invalid", "invalid",
-    "invalid", "invalid"
-};
-
 const int NUM_BUTTONS = 30;
 
 Dialog::Dialog(QWidget *parent) :
@@ -52,7 +26,7 @@ Dialog::Dialog(QWidget *parent) :
         connect(button, &QPushButton::clicked, this, &Dialog::onButtonClicked);
     }
     scoreLabel = 0;
-    setupTimers();
+
     updateScore();
 
     // Connect the reset button
@@ -92,6 +66,8 @@ void Dialog::assignValuesToButtons()
 	std::uniform_int_distribution<int> distribution2(0, 41);
 	int which_list = distribution1(generator1);
 	int which_value = distribution2(generator2);
+
+	correctValueTexts = AllTerms[which_list];
 
     // Assign shuffled values to buttons
     for (int i = 0; i < buttons.size(); ++i) {
@@ -144,20 +120,6 @@ void Dialog::resetGame()
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void Dialog::onButtonClicked()
 {
     QPushButton *button = qobject_cast<QPushButton*>(sender());
@@ -181,7 +143,6 @@ void Dialog::handleButtonClick(QPushButton *button)
 
     updateScore();
     checkWinCondition();
-    checkLoseCondition();
 }
 
 void Dialog::updateScore()
@@ -189,44 +150,6 @@ void Dialog::updateScore()
     if (scoreLabel)
         scoreLabel->setText("Score: " + QString::number(points));
 }
-
-void Dialog::setupTimers()
-{
-    disableButtonTimer = new QTimer(this);
-    connect(disableButtonTimer, &QTimer::timeout, this, &Dialog::disableRandomButton);
-    disableButtonTimer->start(2000);  // Every 2 seconds
-}
-
-void Dialog::disableRandomButton()
-{
-    // List of buttons to choose from (excluding green or red)
-    QList<QPushButton*> availableButtons;
-
-    for (QPushButton* button : buttons) {
-        // Check the button's current style
-        QString style = button->styleSheet();
-
-        // Add buttons that are not green or red
-        if (button->isEnabled() && button->isVisible() &&
-            !(style.contains("background-color: green;") ||
-              style.contains("background-color: red;") ||
-              style.contains("background-color: orange;"))) {
-            availableButtons.append(button);
-        }
-    }
-
-    // If no buttons are available, return
-    if (availableButtons.isEmpty()) return;
-
-    // Choose a random button from the available ones
-    int index = QRandomGenerator::global()->bounded(availableButtons.size());
-    QPushButton* button = availableButtons[index];
-
-    // Set the button color to blue and disable it
-    button->setStyleSheet("background-color: blue;");
-    button->setDisabled(true);
-}
-
 
 void Dialog::checkWinCondition()
 {
@@ -237,7 +160,7 @@ void Dialog::checkWinCondition()
         QString text = button->text();
 
         if (correctValueTexts.contains(text)) {
-            if (!(style.contains("background-color: green;") || style.contains("background-color: blue;"))) {
+            if (!(style.contains("background-color: green;"))) {
                 allCorrectButtonsGreenOrBlue = false;
                 break;
             }
@@ -250,37 +173,3 @@ void Dialog::checkWinCondition()
         disableButtonTimer->stop();
     }
 }
-
-
-
-
-
-
-void Dialog::checkLoseCondition()
-{
-    bool allIncorrectButtonsColored = true;
-
-    for (QPushButton* button : buttons)
-    {
-        QString style = button->styleSheet();
-        if (incorrectValueTexts.contains(buttonValues[button]))
-        {
-            // Check if the button is either red or blue
-            if (!(style.contains("background-color: red;") || style.contains("background-color: blue;")))
-            {
-                allIncorrectButtonsColored = false;
-                break;  // If any incorrect button is not red or blue, stop checking
-            }
-        }
-    }
-
-    if (allIncorrectButtonsColored)
-    {
-        if (ui->statusLabel)
-        {
-            ui->statusLabel->setText("SORRY YOU LOOSE TRY AGAIN!!");
-        }
-        disableButtonTimer->stop();  // Stop the timer
-    }
-}
-

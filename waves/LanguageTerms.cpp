@@ -186,6 +186,8 @@ const QStringList PerlTerms = {
     "use", "strict", "warnings", "sub", "return", "continue", "defined", "exists", "delete"
 };
 
+QStringList correctValueTexts = {"none"};
+
 // Create a vector<QList<QList<QString>> containing all the QStringLists
 const QVector<QStringList> AllTerms = {
     CPlusPlusTerms,

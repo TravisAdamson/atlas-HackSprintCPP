@@ -26,5 +26,6 @@ extern const QStringList MatlabTerms;
 extern const QStringList HaskellTerms;
 extern const QStringList PerlTerms;
 extern const QVector<QStringList> AllTerms;
+extern QStringList correctValueTexts;
 
 #endif // LANGUAGETERMS_H
