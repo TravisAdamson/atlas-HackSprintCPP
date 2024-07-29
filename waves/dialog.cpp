@@ -14,10 +14,11 @@ const int NUM_BUTTONS = 30;
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog),
-    scoreLabel(nullptr),
     points(0)
 {
     ui->setupUi(this);
+
+	scoreLabel = ui->scoreLabel;
 
     initializeButtons();
     assignValuesToButtons();
@@ -25,7 +26,6 @@ Dialog::Dialog(QWidget *parent) :
     for (QPushButton* button : buttons) {
         connect(button, &QPushButton::clicked, this, &Dialog::onButtonClicked);
     }
-    scoreLabel = 0;
 
     updateScore();
 
@@ -176,5 +176,3 @@ void Dialog::checkWinCondition()
         winMsgBox.exec();
     }
 }
-
-
