@@ -179,7 +179,7 @@
     <string>%langName%</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
   <widget class="QPushButton" name="rerollButton">
