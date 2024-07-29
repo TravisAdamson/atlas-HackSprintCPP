@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1112</width>
-    <height>900</height>
+    <width>750</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="cursor">
@@ -19,7 +19,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -32,7 +32,7 @@
     <string>PB2</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -45,7 +45,7 @@
     <string>PB3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_10">
+  <widget class="QPushButton" name="pushButton_9">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -58,7 +58,7 @@
     <string>PB2</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_16">
+  <widget class="QPushButton" name="pushButton_15">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -71,7 +71,7 @@
     <string>PB2</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_22">
+  <widget class="QPushButton" name="pushButton_21">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -84,7 +84,7 @@
     <string>PB2</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_28">
+  <widget class="QPushButton" name="pushButton_27">
    <property name="geometry">
     <rect>
      <x>250</x>
@@ -97,7 +97,7 @@
     <string>PB2</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_30">
+  <widget class="QPushButton" name="pushButton_26">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -182,7 +182,7 @@
     <set>Qt::AlignJustify|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="rerollButton_2">
+  <widget class="QPushButton" name="rerollButton">
    <property name="geometry">
     <rect>
      <x>320</x>
@@ -198,7 +198,7 @@
     <string>Reroll</string>
    </property>
   </widget>
-  <widget class="QLabel" name="scoreLabel_2">
+  <widget class="QLabel" name="scoreLabel">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -211,115 +211,11 @@
     <string>Score: %%%</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>150</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>230</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_6">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>150</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_7">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>70</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_8">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>390</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_9">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>310</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_11">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>230</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_12">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
      <y>150</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_13">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>70</y>
      <width>120</width>
      <height>80</height>
     </rect>
@@ -331,33 +227,7 @@
   <widget class="QPushButton" name="pushButton_14">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>390</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_15">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>310</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_17">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
+     <x>130</x>
      <y>230</y>
      <width>120</width>
      <height>80</height>
@@ -367,10 +237,10 @@
     <string>PB3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_18">
+  <widget class="QPushButton" name="pushButton_8">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>130</x>
      <y>150</y>
      <width>120</width>
      <height>80</height>
@@ -380,10 +250,10 @@
     <string>PB3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_19">
+  <widget class="QPushButton" name="pushButton_1">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>10</x>
      <y>70</y>
      <width>120</width>
      <height>80</height>
@@ -393,23 +263,10 @@
     <string>PB3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_20">
+  <widget class="QPushButton" name="pushButton_29">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>310</y>
-     <width>120</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PB3</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_21">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
+     <x>490</x>
      <y>390</y>
      <width>120</width>
      <height>80</height>
@@ -422,8 +279,112 @@
   <widget class="QPushButton" name="pushButton_23">
    <property name="geometry">
     <rect>
-     <x>610</x>
+     <x>490</x>
+     <y>310</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_17">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
      <y>230</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_11">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>150</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>70</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_28">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>390</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_22">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>310</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_16">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>230</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_10">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>150</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>70</y>
      <width>120</width>
      <height>80</height>
     </rect>
@@ -436,6 +397,45 @@
    <property name="geometry">
     <rect>
      <x>610</x>
+     <y>310</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_30">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>390</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_18">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>230</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PB3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_12">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
      <y>150</y>
      <width>120</width>
      <height>80</height>
@@ -445,7 +445,7 @@
     <string>PB3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_25">
+  <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -458,7 +458,7 @@
     <string>PB3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_26">
+  <widget class="QPushButton" name="pushButton_13">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -471,7 +471,7 @@
     <string>PB3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_27">
+  <widget class="QPushButton" name="pushButton_20">
    <property name="geometry">
     <rect>
      <x>130</x>
@@ -484,7 +484,7 @@
     <string>PB2</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_29">
+  <widget class="QPushButton" name="pushButton_19">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -497,7 +497,7 @@
     <string>PB3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_31">
+  <widget class="QPushButton" name="pushButton_25">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -511,40 +511,40 @@
    </property>
   </widget>
   <zorder>backgroundWidget</zorder>
-  <zorder>pushButton_2</zorder>
   <zorder>pushButton_3</zorder>
-  <zorder>pushButton_10</zorder>
-  <zorder>pushButton_16</zorder>
-  <zorder>pushButton_22</zorder>
-  <zorder>pushButton_28</zorder>
-  <zorder>pushButton_30</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_9</zorder>
+  <zorder>pushButton_15</zorder>
+  <zorder>pushButton_21</zorder>
+  <zorder>pushButton_27</zorder>
+  <zorder>pushButton_26</zorder>
   <zorder>puzzleInstructions</zorder>
   <zorder>langName</zorder>
-  <zorder>rerollButton_2</zorder>
-  <zorder>scoreLabel_2</zorder>
-  <zorder>pushButton_4</zorder>
-  <zorder>pushButton_5</zorder>
-  <zorder>pushButton_6</zorder>
+  <zorder>rerollButton</zorder>
+  <zorder>scoreLabel</zorder>
   <zorder>pushButton_7</zorder>
-  <zorder>pushButton_8</zorder>
-  <zorder>pushButton_9</zorder>
-  <zorder>pushButton_11</zorder>
-  <zorder>pushButton_12</zorder>
-  <zorder>pushButton_13</zorder>
   <zorder>pushButton_14</zorder>
-  <zorder>pushButton_15</zorder>
-  <zorder>pushButton_17</zorder>
-  <zorder>pushButton_18</zorder>
-  <zorder>pushButton_19</zorder>
-  <zorder>pushButton_20</zorder>
-  <zorder>pushButton_21</zorder>
-  <zorder>pushButton_23</zorder>
-  <zorder>pushButton_24</zorder>
-  <zorder>pushButton_25</zorder>
-  <zorder>pushButton_26</zorder>
-  <zorder>pushButton_27</zorder>
+  <zorder>pushButton_8</zorder>
+  <zorder>pushButton_1</zorder>
   <zorder>pushButton_29</zorder>
-  <zorder>pushButton_31</zorder>
+  <zorder>pushButton_23</zorder>
+  <zorder>pushButton_17</zorder>
+  <zorder>pushButton_11</zorder>
+  <zorder>pushButton_5</zorder>
+  <zorder>pushButton_28</zorder>
+  <zorder>pushButton_22</zorder>
+  <zorder>pushButton_16</zorder>
+  <zorder>pushButton_10</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>pushButton_24</zorder>
+  <zorder>pushButton_30</zorder>
+  <zorder>pushButton_18</zorder>
+  <zorder>pushButton_12</zorder>
+  <zorder>pushButton_6</zorder>
+  <zorder>pushButton_13</zorder>
+  <zorder>pushButton_20</zorder>
+  <zorder>pushButton_19</zorder>
+  <zorder>pushButton_25</zorder>
  </widget>
  <resources/>
  <connections/>
