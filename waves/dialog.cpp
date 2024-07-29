@@ -151,7 +151,7 @@ void Dialog::handleButtonClick(QPushButton *button)
     } else {
         button->setStyleSheet("background-color: red; color: black;"); // Set incorrect button color
         button->setDisabled(true); // Disable the button
-        button->setStyleSheet(hide)
+        button->setVisible(false); // Hide the button
         points -= 100;
 
     }
