@@ -30,15 +30,10 @@ private:
     void assignValuesToButtons();
     void handleButtonClick(QPushButton *button);
     void updateScore();
-    void setupTimers();
-    void disableRandomButton();
     void checkWinCondition();
-    void checkLoseCondition();
-
     Ui::Dialog *ui;
     QList<QPushButton*> buttons;
     QMap<QPushButton*, QString> buttonValues;
-    QTimer *disableButtonTimer;
     QLabel *scoreLabel;
     int points;
 };

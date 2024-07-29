@@ -109,11 +109,6 @@ void Dialog::resetGame()
         qDebug() << "Button text after reset:" << button->text();
     }
 
-    // Restart the timer if needed
-    if (disableButtonTimer) {
-        disableButtonTimer->start(2000); // Restart the timer with the desired interval
-    }
-
     // Clear status message
     if (ui->statusLabel) {
         ui->statusLabel->clear();
@@ -170,6 +165,5 @@ void Dialog::checkWinCondition()
     if (allCorrectButtonsGreenOrBlue) {
         QString winMessage = QString("YOU WIN!! Your score is: %1").arg(points);
         QMessageBox::information(this, "Congratulations!", winMessage);
-        disableButtonTimer->stop();
     }
 }
