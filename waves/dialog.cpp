@@ -130,6 +130,7 @@ void Dialog::handleButtonClick(QPushButton *button)
     } else {
         button->setStyleSheet("background-color: red;");
         points -= 50;
+        button->setDisabled(true);
     }
 
     updateScore();
