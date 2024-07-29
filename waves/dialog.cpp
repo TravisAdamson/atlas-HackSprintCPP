@@ -62,7 +62,7 @@ void Dialog::assignValuesToButtons()
 	std::random_device rd;
 	std::mt19937 generator1(rd());
 	std::mt19937 generator2(rd());
-	std::uniform_int_distribution<int> distribution1(0, 14);
+	std::uniform_int_distribution<int> distribution1(0, 11);
 	std::uniform_int_distribution<int> distribution2(0, 41);
 	int which_list = distribution1(generator1);
 	int which_value = distribution2(generator2);
