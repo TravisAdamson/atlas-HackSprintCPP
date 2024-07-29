@@ -5,10 +5,12 @@ TEMPLATE = app
 
 SOURCES += \
     main.cpp \
+	LanguageTerms.cpp \
     dialog.cpp  # Updated from mainwindow.cpp to dialog.cpp
 
 HEADERS += \
-    dialog.h  # Updated from mainwindow.h to dialog.h
+    dialog.h \
+	LanguageTerms.h
 
 FORMS += \
     try.ui

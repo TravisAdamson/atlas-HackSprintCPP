@@ -17,9 +17,9 @@ const QStringList PythonTerms = {
     "int", "float", "str", "list", "tuple", "dict", "set", "bool", "bytes", "bytearray",
     "None", "if", "else", "elif", "for", "while", "break", "continue", "pass", "return",
     "def", "class", "import", "from", "as", "with", "try", "except", "finally", "raise",
-    "lambda", "map", "filter", "reduce", "list comprehension", "generator expression", "yield", 
+    "lambda", "map", "filter", "reduce", "list comprehension", "generator expression", "yield",
     "open", "close", "read", "write", "append", "seek", "format", "f-string", "print",
-    "type", "isinstance", "issubclass", "staticmethod", "classmethod", "property", "super", 
+    "type", "isinstance", "issubclass", "staticmethod", "classmethod", "property", "super",
     "self", "__init__", "__str__", "__repr__", "__getitem__", "__setitem__", "__delitem__", "__iter__",
     "__next__", "__contains__", "__call__", "global", "nonlocal", "assert", "del", "exec"
 };
@@ -186,8 +186,8 @@ const QStringList PerlTerms = {
     "use", "strict", "warnings", "sub", "return", "continue", "defined", "exists", "delete"
 };
 
-// Create a QList<QList<QString>> containing all the QStringLists
-const QList<QStringList> AllTerms = {
+// Create a vector<QList<QList<QString>> containing all the QStringLists
+const QVector<QStringList> AllTerms = {
     CPlusPlusTerms,
     PythonTerms,
     BashTerms,

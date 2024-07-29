@@ -2,6 +2,7 @@
 #define LANGUAGETERMS_H
 
 #include <QStringList>
+#include <QVector>
 
 extern const QStringList CPlusPlusTerms;
 extern const QStringList PythonTerms;
@@ -24,5 +25,6 @@ extern const QStringList GroovyTerms;
 extern const QStringList MatlabTerms;
 extern const QStringList HaskellTerms;
 extern const QStringList PerlTerms;
+extern const QVector<QStringList> AllTerms;
 
 #endif // LANGUAGETERMS_H

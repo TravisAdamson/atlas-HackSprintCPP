@@ -1,5 +1,6 @@
 #include "dialog.h"
 #include "ui_try.h"
+#include "LanguageTerms.h"
 
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -84,13 +85,13 @@ void Dialog::initializeButtons()
 
 void Dialog::assignValuesToButtons()
 {
-    // Combine correct and incorrect values
-    QStringList allValues = correctValueTexts + incorrectValueTexts;
-    /* StringList allValues = correctValueTexts2; */
-
-    // Shuffle the values
-    QRandomGenerator rng;
-    std::shuffle(allValues.begin(), allValues.end(), rng);
+	std::random_device rd;
+	std::mt19937 generator1(rd());
+	std::mt19937 generator2(rd());
+	std::uniform_int_distribution<int> distribution1(0, 21);
+	std::uniform_int_distribution<int> distribution2(0, 42);
+	int which_list = distribution1(generator1);
+	int which_value = distribution2(generator2);
 
     // Assign shuffled values to buttons
     for (int i = 0; i < buttons.size(); ++i) {
@@ -99,9 +100,11 @@ void Dialog::assignValuesToButtons()
             qDebug() << "Button is null!";
             continue;
         }
-        QString value = allValues[i];
+        QString value = AllTerms[which_list][which_value];
         buttonValues[button] = value;  // Update internal value map
         button->setText(value);        // Update button text
+		which_list = distribution1(generator1);
+		which_value = distribution2(generator2);
 
         // Debugging output
         qDebug() << "Button" << i << "assigned value:" << value;
@@ -198,11 +201,11 @@ void Dialog::disableRandomButton()
 {
     // List of buttons to choose from (excluding green or red)
     QList<QPushButton*> availableButtons;
-    
+
     for (QPushButton* button : buttons) {
         // Check the button's current style
         QString style = button->styleSheet();
-        
+
         // Add buttons that are not green or red
         if (button->isEnabled() && button->isVisible() &&
             !(style.contains("background-color: green;") ||
@@ -256,7 +259,7 @@ void Dialog::checkWinCondition()
 void Dialog::checkLoseCondition()
 {
     bool allIncorrectButtonsColored = true;
-    
+
     for (QPushButton* button : buttons)
     {
         QString style = button->styleSheet();
@@ -270,7 +273,7 @@ void Dialog::checkLoseCondition()
             }
         }
     }
-    
+
     if (allIncorrectButtonsColored)
     {
         if (ui->statusLabel)
