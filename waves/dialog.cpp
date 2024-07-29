@@ -172,7 +172,7 @@ void Dialog::checkWinCondition()
 
         // Add custom buttons
         QPushButton *playAgainButton = winMsgBox.addButton("Play Again", QMessageBox::ActionRole);
-        QPushButton *exitButton = winMsgBox.addButton("Exit", QMessageBox::RejectRole);
+        QPushButton *exitButton = winMsgBox.addButton("Quit", QMessageBox::RejectRole);
 
         // Connect the buttons to slots
         connect(playAgainButton, &QPushButton::clicked, this, &Dialog::resetGame);
