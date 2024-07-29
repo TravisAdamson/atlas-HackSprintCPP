@@ -228,3 +228,9 @@ const QVector<QStringList> AllTerms = {
     HaskellTerms,
     PerlTerms
 };
+
+const QStringList Titles = {
+    "C++", "Python", "Bash", "Java", "JavaScript", "Assembly", "C", "Rust", "Fortran",
+    "Ada", "Swift", "Kotlin", "PHP", "Ruby", "Tcl", "R", "Objective-C", "Groovy", "Matlab",
+    "Haskell", "Perl"
+};
