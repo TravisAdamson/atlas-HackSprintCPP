@@ -53,8 +53,10 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = main.cpp \
+		LanguageTerms.cpp \
 		dialog.cpp moc_dialog.cpp
 OBJECTS       = main.o \
+		LanguageTerms.o \
 		dialog.o \
 		moc_dialog.o
 DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
@@ -144,7 +146,9 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/exceptions.prf \
 		/usr/lib/qt/mkspecs/features/yacc.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
-		waves.pro dialog.h main.cpp \
+		waves.pro dialog.h \
+		LanguageTerms.h main.cpp \
+		LanguageTerms.cpp \
 		dialog.cpp
 QMAKE_TARGET  = waves
 DESTDIR       = 
@@ -349,8 +353,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents dialog.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp dialog.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents dialog.h LanguageTerms.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp LanguageTerms.cpp dialog.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents try.ui $(DISTDIR)/
 
 
@@ -415,8 +419,12 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 main.o: main.cpp dialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
+LanguageTerms.o: LanguageTerms.cpp LanguageTerms.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o LanguageTerms.o LanguageTerms.cpp
+
 dialog.o: dialog.cpp dialog.h \
-		ui_try.h
+		ui_try.h \
+		LanguageTerms.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialog.o dialog.cpp
 
 moc_dialog.o: moc_dialog.cpp 
