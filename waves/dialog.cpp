@@ -62,13 +62,14 @@ void Dialog::assignValuesToButtons()
 	std::random_device rd;
 	std::mt19937 generator1(rd());
 	std::mt19937 generator2(rd());
-	std::uniform_int_distribution<int> distribution1(0, 20);
+	std::uniform_int_distribution<int> distribution1(0, 14);
 	std::uniform_int_distribution<int> distribution2(0, 41);
 	int which_list = distribution1(generator1);
 	int which_value = distribution2(generator2);
 
 	correctValueTexts = AllTerms[which_list];
-
+	QString value = Titles[which_list];
+	ui->puzzle->setText(Titles[which_list]);
     // Assign shuffled values to buttons
     for (int i = 0; i < buttons.size(); ++i) {
         QPushButton* button = buttons[i];

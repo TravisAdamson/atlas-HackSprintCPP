@@ -483,7 +483,7 @@
     </property>
    </widget>
   </widget>
-  <widget class="QLabel" name="puzzle">
+  <widget class="QLabel" name="puzzleDetails">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -500,10 +500,30 @@
     </font>
    </property>
    <property name="text">
-    <string>Find all the terms related to C language</string>
+    <string>Find all the terms related to </string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="puzzle">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>10</y>
+     <width>201</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>C:</string>
    </property>
   </widget>
   <zorder>backgroundWidget</zorder>
@@ -515,6 +535,7 @@
   <zorder>pushButton_22</zorder>
   <zorder>pushButton_28</zorder>
   <zorder>pushButton_30</zorder>
+  <zorder>puzzleDetails</zorder>
   <zorder>puzzle</zorder>
  </widget>
  <resources/>

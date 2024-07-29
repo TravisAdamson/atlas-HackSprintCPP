@@ -110,15 +110,6 @@ const QStringList SwiftTerms = {
     "fileprivate", "open", "lazy", "required", "dynamic", "inout", "some", "any", "never", "defer", "fatalError"
 };
 
-// KotlinTerms
-const QStringList KotlinTerms = {
-    "val", "var", "fun", "class", "object", "interface", "data", "enum", "sealed", "when",
-    "if", "else", "for", "while", "do", "break", "continue", "return", "try", "catch",
-    "finally", "throw", "null", "in", "out", "override", "abstract", "final", "open", "companion",
-    "init", "constructor", "delegate", "lateinit", "suspend", "with", "this", "super", "const", "typealias",
-    "inline", "operator", "infix", "external"
-};
-
 // PhpTerms
 const QStringList PhpTerms = {
     "echo", "print", "var", "public", "private", "protected", "class", "function", "return", "if",
@@ -137,25 +128,6 @@ const QStringList RubyTerms = {
     "initialize", "each", "map", "select", "reject", "find", "collect", "module_function"
 };
 
-// TclTerms
-const QStringList TclTerms = {
-    "proc", "args", "global", "return", "if", "elseif", "else", "for", "while", "foreach",
-    "switch", "break", "continue", "try", "catch", "throw", "rename", "unset", "eval", "exec",
-    "source", "append", "incr", "lappend", "lindex", "llength", "lrange", "list", "split", "join",
-    "dict", "array", "format", "regexp", "regsub", "string", "scan", "expr", "clock", "file",
-    "open", "close", "puts", "gets", "fconfigure", "fopen", "fclose", "fputs", "lsearch", "uplevel"
-};
-
-// RTerms
-const QStringList RTerms = {
-    "if", "else", "for", "while", "repeat", "break", "next", "return", "function", "list",
-    "data.frame", "matrix", "vector", "array", "factor", "numeric", "integer", "character", "logical",
-    "print", "cat", "summary", "str", "head", "tail", "plot", "hist", "boxplot", "lm",
-    "glm", "cor", "mean", "sd", "var", "t.test", "aov", "anova", "chisq.test", "prop.test",
-    "apply", "lapply", "sapply", "tapply", "mapply", "sweep", "merge", "reshape", "rbind", "cbind",
-    "order", "rank", "aggregate"
-};
-
 // ObjectiveCTerms
 const QStringList ObjectiveCTerms = {
     "int", "float", "double", "char", "NSString", "NSArray", "NSDictionary", "id", "SEL", "BOOL",
@@ -164,34 +136,6 @@ const QStringList ObjectiveCTerms = {
     "super", "self", "if", "else", "for", "while", "switch", "case", "break", "continue",
     "return", "try", "catch", "finally", "throw", "performSelector", "respondsToSelector", "hasPrefix", "isEqualToString",
     "NSLog", "NSUserDefaults"
-};
-
-// GroovyTerms
-const QStringList GroovyTerms = {
-    "def", "class", "interface", "abstract", "static", "public", "private", "protected", "void", "return",
-    "if", "else", "elseif", "switch", "case", "default", "for", "while", "do", "break",
-    "continue", "try", "catch", "finally", "throw", "assert", "synchronized", "import", "package", "new",
-    "this", "super", "extends", "implements", "yield", "in", "out", "with", "each", "collect",
-    "find", "grep", "inject", "sort", "join", "split", "trim", "leftShift", "rightShift", "power"
-};
-
-// MatlabTerms
-const QStringList MatlabTerms = {
-    "function", "end", "if", "elseif", "else", "switch", "case", "otherwise", "for", "while",
-    "break", "continue", "return", "try", "catch", "disp", "fprintf", "input", "load", "save",
-    "clear", "clc", "close", "plot", "figure", "axis", "xlabel", "ylabel", "title", "legend",
-    "mean", "std", "var", "sum", "size", "length", "reshape", "sort", "unique", "concat",
-    "cell", "struct", "table", "array", "matrix", "zeros", "ones", "rand", "randn", "eig",
-    "linspace", "logspace", "meshgrid"
-};
-
-// HaskellTerms
-const QStringList HaskellTerms = {
-    "let", "in", "where", "if", "then", "else", "case", "of", "data", "type",
-    "newtype", "class", "instance", "module", "import", "qualified", "as", "do", "return", "fail",
-    "bind", "forall", "IO", "Monad", "Functor", "Applicative", "foldl", "foldr", "map",
-    "filter", "foldl1", "foldr1", "concat", "zip", "unzip", "length", "head", "tail", "last", "init",
-    "error", "undefined", "letrec"
 };
 
 // PerlTerms
@@ -218,20 +162,13 @@ const QVector<QStringList> AllTerms = {
     FortranTerms,
     AdaTerms,
     SwiftTerms,
-    KotlinTerms,
     PhpTerms,
     RubyTerms,
-    TclTerms,
-    RTerms,
     ObjectiveCTerms,
-    GroovyTerms,
-    MatlabTerms,
-    HaskellTerms,
     PerlTerms
 };
 
 const QStringList Titles = {
     "C++", "Python", "Bash", "Java", "JavaScript", "Assembly", "C", "Rust", "Fortran",
-    "Ada", "Swift", "Kotlin", "PHP", "Ruby", "Tcl", "R", "Objective-C", "Groovy", "Matlab",
-    "Haskell", "Perl"
+    "Ada", "Swift", "PHP", "Ruby", "Objective-C", "Perl"
 };

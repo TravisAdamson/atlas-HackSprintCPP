@@ -15,17 +15,12 @@ extern const QStringList RustTerms;
 extern const QStringList FortranTerms;
 extern const QStringList AdaTerms;
 extern const QStringList SwiftTerms;
-extern const QStringList KotlinTerms;
 extern const QStringList PhpTerms;
 extern const QStringList RubyTerms;
-extern const QStringList TclTerms;
-extern const QStringList RTerms;
 extern const QStringList ObjectiveCTerms;
-extern const QStringList GroovyTerms;
-extern const QStringList MatlabTerms;
-extern const QStringList HaskellTerms;
 extern const QStringList PerlTerms;
 extern const QVector<QStringList> AllTerms;
 extern QStringList correctValueTexts;
+extern const QStringList Titles;
 
 #endif // LANGUAGETERMS_H
