@@ -1,4 +1,5 @@
 #include "LanguageTerms.h"
+
 // CPlusPlusTerms
 const QStringList CPlusPlusTerms = {
     "char", "float", "double", "short", "long", "long long",
@@ -16,7 +17,7 @@ const QStringList PythonTerms = {
     "int", "float", "str", "list", "tuple", "dict", "set", "bool", "bytes", "bytearray",
     "None", "if", "else", "elif", "for", "while", "break", "continue", "pass", "return",
     "def", "class", "import", "from", "as", "with", "try", "except", "finally", "raise",
-    "lambda", "map", "filter", "reduce", "list comprehension", "generator expression", "yield",
+    "lambda", "map", "filter", "reduce", "comprehensions", "generator", "yield",
     "open", "close", "read", "write", "append", "seek", "format", "f-string", "print",
     "type", "isinstance", "issubclass", "staticmethod", "classmethod", "property", "self"
 };
