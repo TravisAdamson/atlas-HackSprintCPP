@@ -121,20 +121,51 @@ void Dialog::onButtonClicked()
 
 void Dialog::handleButtonClick(QPushButton *button)
 {
-    QString value = buttonValues[button];
+    QString value = buttonValues[button]; // Get the original value of the button
 
     if (correctValueTexts.contains(value)) {
-        button->setStyleSheet("background-color: green;");
-        button->setDisabled(true);
-        points += 100;
+        QString winMessage = QString("You gained another chance.").arg(points);
+
+        button->setStyleSheet("background-color: green;"); // Set correct button color
+        QMessageBox winMsgBox(this);
+        winMsgBox.setText(winMessage);
+        winMsgBox.setWindowTitle(QString("%1 is correct!").arg(value));
+        winMsgBox.exec();
+        points += 50;
+
+        // Generate a new value for the button
+        std::random_device rd;
+        std::mt19937 generator(rd());
+        std::uniform_int_distribution<int> distribution1(0, 14);
+        std::uniform_int_distribution<int> distribution2(0, 41);
+
+        int which_list = distribution1(generator);
+        int which_value = distribution2(generator);
+
+        QString newValue = AllTerms[which_list][which_value];
+        
+        // Update the button text and value
+        button->setText(newValue);
+        buttonValues[button] = newValue;
+
     } else {
-        button->setStyleSheet("background-color: red;");
-        points -= 50;
+        button->setStyleSheet("background-color: red; color: black;"); // Set incorrect button color
+        button->setDisabled(true); // Disable the button
+        button->setStyleSheet(hide)
+        points -= 100;
+
     }
+
+    // Clear focus from the button
+    button->clearFocus();
 
     updateScore();
     checkWinCondition();
 }
+
+
+
+
 
 void Dialog::updateScore()
 {
