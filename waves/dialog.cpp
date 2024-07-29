@@ -64,10 +64,6 @@ Dialog::~Dialog()
 }
 
 
-
-
-
-
 void Dialog::initializeButtons()
 {
     buttons = {
