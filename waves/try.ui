@@ -178,7 +178,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(38, 162, 105)</string>
+    <string notr="true">background-color: rgb(200, 100, 0)</string>
    </property>
    <property name="text">
     <string>Reroll</string>
