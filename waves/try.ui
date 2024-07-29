@@ -185,7 +185,7 @@
     </font>
    </property>
    <property name="text">
-    <string>%langName%</string>
+    <string>langName</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -225,7 +225,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Score: %%%</string>
+    <string>Score: </string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_7">
