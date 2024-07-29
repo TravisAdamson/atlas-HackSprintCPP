@@ -124,11 +124,11 @@ void Dialog::handleButtonClick(QPushButton *button)
     QString value = buttonValues[button];
 
     if (correctValueTexts.contains(value)) {
-        button->setStyleSheet("background-color: green;");
+        button->setStyleSheet("background-color: green; color: white;"); // Assuming white text on green is readable
         button->setDisabled(true);
         points += 100;
     } else {
-        button->setStyleSheet("background-color: red;");
+        button->setStyleSheet("background-color: red; color: black;"); // Combine background and text color
         points -= 50;
         button->setDisabled(true);
     }
@@ -136,6 +136,7 @@ void Dialog::handleButtonClick(QPushButton *button)
     updateScore();
     checkWinCondition();
 }
+
 
 void Dialog::updateScore()
 {
