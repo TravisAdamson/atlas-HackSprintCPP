@@ -11,8 +11,8 @@ const QStringList CPlusPlusTerms = {
     "override", "final", "dynamic_cast", "static_cast", "const_cast", "reinterpret_cast",
     "operator", "new", "delete", "this", "typeid", "sizeof", "decltype", "alignas", "alignof",
     // Shared terms
-    "char", "int", "float", "double", "short", "long", "const", "static", "extern", "typedef", 
-    "struct", "union", "enum", "return", "if", "else", "for", "while", "do", "break", "continue", 
+    "char", "int", "float", "double", "short", "long", "const", "static", "extern", "typedef",
+    "struct", "union", "enum", "return", "if", "else", "for", "while", "do", "break", "continue",
     "sizeof", "pointer", "function"
 };
 
@@ -165,11 +165,11 @@ const QVector<QStringList> AllTerms = {
 
 const QStringList Titles = {
     "C++", "Python", "Bash", "Java", "JavaScript", "Assembly", "C", "Rust", "Fortran",
-    "PHP", "Ruby", "Objective-C", "Perl"
+    "PHP", "Ruby", "Perl"
 };
 
 const std::unordered_map<std::string, std::string> explanationMap = {
-    
+
     // TermDefinitions
     {"char", "Data type representing a single character."},
     {"int", "Data type representing integer values."},
@@ -575,5 +575,5 @@ const std::unordered_map<std::string, std::string> explanationMap = {
     {"binding", "Returns the current execution context, allowing evaluation of code in that context."},
     {"caller", "Returns the current call stack."},
     {"caller_locations", "Returns detailed information about the call stack."},
-    
+
     };
