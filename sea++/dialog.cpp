@@ -9,7 +9,6 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QMovie>
-
 #include <QString>
 #include <QLabel>
 #include <unordered_map>
@@ -24,37 +23,45 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-	scoreLabel = ui->scoreLabel;
-	backWidget = ui->backgroundWidget;
-	backWidget->resize(746, 547);
-	backWidget->setGeometry(0, 0, 746, 547);
-	QLabel *backgroundLabel = new QLabel(backWidget);
-	QMovie *movie = new QMovie("gif/water_pa.gif");
-	backgroundLabel->setMovie(movie);
-	movie->start();
-	backgroundLabel->resize(746, 547);
+    scoreLabel = ui->scoreLabel;
+    backWidget = ui->backgroundWidget;
+    startButton = ui->startButton;  // Initialize the start button
+
+    backWidget->resize(746, 547);
+    backWidget->setGeometry(0, 0, 746, 547);
+    QLabel *backgroundLabel = new QLabel(backWidget);
+    QMovie *movie = new QMovie("gif/water_pa.gif");
+    backgroundLabel->setMovie(movie);
+    movie->start();
+    backgroundLabel->resize(746, 547);
     backgroundLabel->setGeometry(0, 0, 746, 547);
-	backgroundLabel->setScaledContents(true);
-	backgroundLabel->show();
+    backgroundLabel->setScaledContents(true);
+    backgroundLabel->show();
 
     initializeButtons();
     assignValuesToButtons();
 
+    // Hide game elements initially
+    for (QPushButton* button : buttons) {
+        button->setVisible(false);
+    }
+    ui->rerollButton->setVisible(false);
+    scoreLabel->setVisible(false);
+
+    // Connect the start button to the slot
+    connect(startButton, &QPushButton::clicked, this, &Dialog::onStartButtonClicked);
     for (QPushButton* button : buttons) {
         connect(button, &QPushButton::clicked, this, &Dialog::onButtonClicked);
     }
+    connect(ui->rerollButton, &QPushButton::clicked, this, &Dialog::resetGame);
 
     updateScore();
-
-    // Connect the reset button
-    connect(ui->rerollButton, &QPushButton::clicked, this, &Dialog::resetGame);
 }
 
 Dialog::~Dialog()
 {
     delete ui;
 }
-
 
 void Dialog::initializeButtons()
 {
@@ -76,69 +83,61 @@ void Dialog::initializeButtons()
 
 void Dialog::assignNewValueToButton(QPushButton *button)
 {
-	std::random_device rd;
-	std::mt19937 generator1(rd());
-	std::mt19937 generator2(rd());
-	std::uniform_int_distribution<int> distribution1(0,11);
-	std::uniform_int_distribution<int> distribution2(0,41);
-	int which_list = distribution1(generator1);
-	int which_value = distribution2(generator2);
-	QString value = AllTerms[which_list][which_value];
-	buttonValues[button] = value;
-	button->setText(value);
+    std::random_device rd;
+    std::mt19937 generator1(rd());
+    std::mt19937 generator2(rd());
+    std::uniform_int_distribution<int> distribution1(0,11);
+    std::uniform_int_distribution<int> distribution2(0,41);
+    int which_list = distribution1(generator1);
+    int which_value = distribution2(generator2);
+    QString value = AllTerms[which_list][which_value];
+    buttonValues[button] = value;
+    button->setText(value);
 }
 
 void Dialog::assignValuesToButtons()
 {
-	std::random_device rd;
-	std::mt19937 generator1(rd());
-	std::mt19937 generator2(rd());
-	std::uniform_int_distribution<int> distribution1(0, 11);
-	std::uniform_int_distribution<int> distribution2(0, 41);
-	int which_list = distribution1(generator1);
-	int which_value = distribution2(generator2);
+    std::random_device rd;
+    std::mt19937 generator1(rd());
+    std::mt19937 generator2(rd());
+    std::uniform_int_distribution<int> distribution1(0, 11);
+    std::uniform_int_distribution<int> distribution2(0, 41);
+    int which_list = distribution1(generator1);
+    int which_value = distribution2(generator2);
 
-	correctValueTexts = AllTerms[which_list];
-	QString value = Titles[which_list];
-	QString puzzleText = "Find the terms related to " + Titles[which_list];
+    correctValueTexts = AllTerms[which_list];
+    QString value = Titles[which_list];
+    QString puzzleText = "Find the terms related to " + Titles[which_list];
     ui->langName->setText(puzzleText);
-    // Assign random values to buttons
     for (int i = 0; i < buttons.size(); ++i) {
         QPushButton* button = buttons[i];
         if (button == nullptr) {
             qDebug() << "Button is null!";
             continue;
         }
-		which_list = distribution1(generator1);
-		which_value = distribution2(generator2);
+        which_list = distribution1(generator1);
+        which_value = distribution2(generator2);
         QString value = AllTerms[which_list][which_value];
-        buttonValues[button] = value;  // Update internal value map
-        button->setText(value);        // Update button text
-
-
-        // Debugging output
+        buttonValues[button] = value;
+        button->setText(value);
         qDebug() << "Button" << i << "assigned value:" << value;
     }
 }
 
 void Dialog::resetGame()
 {
-    qDebug() << "Resetting the game"; // Debugging output
+    qDebug() << "Resetting the game";
 
-    // Reset the score
     points = 0;
     updateScore();
 
-    // Reset all button styles and enable them
     for (QPushButton* button : buttons) {
-        button->setStyleSheet("");  // Clear any existing styles
-        button->setDisabled(false); // Re-enable the button
+        button->setStyleSheet("");
+        button->setDisabled(false);
     }
 
-    // Shuffle and assign new values to buttons
     assignValuesToButtons();
 
-    // Debug output to confirm new values
     for (QPushButton* button : buttons) {
         qDebug() << "Button text after reset:" << button->text();
     }
@@ -172,25 +171,22 @@ void Dialog::handleButtonClick(QPushButton *button)
         button->setDisabled(true);
         points -= 50;
         updateScore();
-        QTimer *timer = new QTimer(this); // `this` is the parent QObject
+        QTimer *timer = new QTimer(this);
         qDebug() << "Button text: " + button->text();
         button->setStyleSheet("background-color: red; color: black;");
         
         connect(timer, &QTimer::timeout, [this, button, timer]() {
-            // Ensure the button is still valid before using it
             if (button) {
                 assignNewValueToButton(button);
                 qDebug() << "Button text: " + button->text();
-                button->setStyleSheet(""); // Reset to default or appropriate style
+                button->setStyleSheet("");
                 updateScore();
                 checkWinCondition();
                 button->setDisabled(false);
             }
-            // Delete the timer once it’s done to avoid memory leaks
             timer->deleteLater();
         });
 
-        // Start the timer with a 2000 ms (2 seconds) interval
         timer->start(2000);
         return;
     }
@@ -198,11 +194,21 @@ void Dialog::handleButtonClick(QPushButton *button)
     checkWinCondition();
 }
 
+void Dialog::onStartButtonClicked()
+{
+    // Hide the start button and show the game elements
+    startButton->setVisible(false);
+    for (QPushButton* button : buttons) {
+        button->setVisible(true);
+    }
+    ui->rerollButton->setVisible(true);
+    scoreLabel->setVisible(true);
+}
 
 void Dialog::updateScore()
 {
-	if (points < 0)
-		points = 0;
+    if (points < 0)
+        points = 0;
     if (scoreLabel)
         scoreLabel->setText("Score: " + QString::number(points));
 }
@@ -230,11 +236,9 @@ void Dialog::checkWinCondition()
         winMsgBox.setText(winMessage);
         winMsgBox.setWindowTitle("Congratulations!");
 
-        // Add custom buttons
         QPushButton *playAgainButton = winMsgBox.addButton("Play Again", QMessageBox::ActionRole);
         QPushButton *exitButton = winMsgBox.addButton("Quit", QMessageBox::RejectRole);
 
-        // Connect the buttons to slots
         connect(playAgainButton, &QPushButton::clicked, this, &Dialog::resetGame);
         connect(exitButton, &QPushButton::clicked, QApplication::instance(), &QApplication::quit);
 

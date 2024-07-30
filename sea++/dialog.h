@@ -5,9 +5,9 @@
 #include <QPushButton>
 #include <QTimer>
 #include <QLabel>
-#include <QMap>          // Include QMap
-#include <QStringList>  // Include QStringList
-#include <QRandomGenerator> // Include QRandomGenerator for shuffling
+#include <QMap>
+#include <QStringList>
+#include <QRandomGenerator>
 #include <QWidget>
 
 namespace Ui {
@@ -24,20 +24,23 @@ public:
 
 private slots:
     void onButtonClicked();
-    void resetGame();  // Declare the slot for resetting the game
+    void resetGame();
+    void onStartButtonClicked();  // Add this slot
 
 private:
     void initializeButtons();
     void assignValuesToButtons();
-	void assignNewValueToButton(QPushButton *button);
+    void assignNewValueToButton(QPushButton *button);
     void handleButtonClick(QPushButton *button);
     void updateScore();
     void checkWinCondition();
+
     Ui::Dialog *ui;
     QList<QPushButton*> buttons;
     QMap<QPushButton*, QString> buttonValues;
     QLabel *scoreLabel;
-	QWidget *backWidget;
+    QWidget *backWidget;
+    QPushButton *startButton;  // Add this member
     int points;
 };
 
