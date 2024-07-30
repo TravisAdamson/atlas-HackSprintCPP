@@ -10,6 +10,11 @@
 #include <QMessageBox>
 #include <QMovie>
 
+#include <QString>
+#include <QLabel>
+#include <unordered_map>
+#include <functional>
+
 const int NUM_BUTTONS = 30;
 
 Dialog::Dialog(QWidget *parent) :
@@ -149,38 +154,55 @@ void Dialog::onButtonClicked()
 
 void Dialog::handleButtonClick(QPushButton *button)
 {
+    static const std::unordered_map<std::string, std::string> explanationMap = {
+        {"if", "if-explination"},
+        {"filler", "filler-explination"},
+        {"echo", "echo-explination"},
+        {"void", "void-explination"},
+        {"include", "include-explination"},
+        {"do", "do-explination"},
+        {"for", "for-explination"}
+    };
+
     QString value = buttonValues[button];
+    std::string valueStr = value.toStdString();
 
     if (correctValueTexts.contains(value)) {
-        button->setStyleSheet("background-color: green; color: white;"); // Assuming white text on green is readable
+        auto it = explanationMap.find(valueStr);
+        if (it != explanationMap.end()) {
+            ui->langName->setText(QString::fromStdString(it->second));
+        } else {
+            ui->langName->setText("unknown value");
+        }
+        button->setStyleSheet("background-color: green; color: white;");
         button->setDisabled(true);
         points += 100;
-		updateScore();
+        updateScore();
     } else {
-		button->setDisabled(true);
-		points -= 50;
-		updateScore();
+        button->setDisabled(true);
+        points -= 50;
+        updateScore();
         QTimer *timer = new QTimer(this); // `this` is the parent QObject
-		qDebug() << "Button text: " + button->text();
-		button->setStyleSheet("background-color: red; color: black;");
+        qDebug() << "Button text: " + button->text();
+        button->setStyleSheet("background-color: red; color: black;");
+        
         connect(timer, &QTimer::timeout, [this, button, timer]() {
             // Ensure the button is still valid before using it
             if (button) {
-				assignNewValueToButton(button);
-				qDebug() << "Button text: " + button->text();
+                assignNewValueToButton(button);
+                qDebug() << "Button text: " + button->text();
                 button->setStyleSheet(""); // Reset to default or appropriate style
                 updateScore();
                 checkWinCondition();
-				button->setDisabled(false);
+                button->setDisabled(false);
             }
             // Delete the timer once it’s done to avoid memory leaks
             timer->deleteLater();
-		});
-		// Start the timer with a 5000 ms (5 seconds) interval
-		timer->start(2000);
+        });
 
-		return;
-
+        // Start the timer with a 2000 ms (2 seconds) interval
+        timer->start(2000);
+        return;
     }
 
     checkWinCondition();
