@@ -8,6 +8,7 @@
 #include <QMap>          // Include QMap
 #include <QStringList>  // Include QStringList
 #include <QRandomGenerator> // Include QRandomGenerator for shuffling
+#include <QWidget>
 
 namespace Ui {
 class Dialog;
@@ -36,6 +37,7 @@ private:
     QList<QPushButton*> buttons;
     QMap<QPushButton*, QString> buttonValues;
     QLabel *scoreLabel;
+	QWidget *backWidget;
     int points;
 };
 

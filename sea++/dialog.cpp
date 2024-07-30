@@ -8,6 +8,7 @@
 #include <QRandomGenerator>
 #include <QDebug>
 #include <QMessageBox>
+#include <QMovie>
 
 const int NUM_BUTTONS = 30;
 
@@ -19,6 +20,17 @@ Dialog::Dialog(QWidget *parent) :
     ui->setupUi(this);
 
 	scoreLabel = ui->scoreLabel;
+	backWidget = ui->backgroundWidget;
+	backWidget->resize(746, 547);
+	backWidget->setGeometry(0, 0, 746, 547);
+	QLabel *backgroundLabel = new QLabel(backWidget);
+	QMovie *movie = new QMovie("gif/water_pa.gif");
+	backgroundLabel->setMovie(movie);
+	movie->start();
+	backgroundLabel->resize(746, 547);
+    backgroundLabel->setGeometry(0, 0, 746, 547);
+	backgroundLabel->setScaledContents(true);
+	backgroundLabel->show();
 
     initializeButtons();
     assignValuesToButtons();
