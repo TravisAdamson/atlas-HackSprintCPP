@@ -92,11 +92,12 @@ void Dialog::assignValuesToButtons()
             qDebug() << "Button is null!";
             continue;
         }
+		which_list = distribution1(generator1);
+		which_value = distribution2(generator2);
         QString value = AllTerms[which_list][which_value];
         buttonValues[button] = value;  // Update internal value map
         button->setText(value);        // Update button text
-		which_list = distribution1(generator1);
-		which_value = distribution2(generator2);
+
 
         // Debugging output
         qDebug() << "Button" << i << "assigned value:" << value;
@@ -144,6 +145,7 @@ void Dialog::handleButtonClick(QPushButton *button)
         points += 100;
 		updateScore();
     } else {
+		button->setDisabled(true);
 		points -= 50;
 		updateScore();
         QTimer *timer = new QTimer(this); // `this` is the parent QObject
@@ -157,6 +159,7 @@ void Dialog::handleButtonClick(QPushButton *button)
                 button->setStyleSheet(""); // Reset to default or appropriate style
                 updateScore();
                 checkWinCondition();
+				button->setDisabled(false);
             }
             // Delete the timer once it’s done to avoid memory leaks
             timer->deleteLater();
