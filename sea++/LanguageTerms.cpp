@@ -841,11 +841,13 @@ const std::unordered_map<std::string, std::string> explanationMap = {
     {"@$", "The default array variable in Perl that represents the current list of values."},
     {"$!", "The current value of the error variable in Perl."},
     {"$0", "The name of the current script or program in Perl."},
-    {"$1", "$2", "$3", "...", "Special variables in Perl that hold captured groups from regular expressions."},
+    {"$1", "Special variables in Perl that hold captured groups from regular expressions."},
+    {"$2", "Special variables in Perl that hold captured groups from regular expressions."},
+    {"$3", "pecial variables in Perl that hold captured groups from regular expressions."},
     {"$^O", "The name of the operating system Perl is running on."},
     {"$^C", "The current value of the C locale in Perl."},
     {"$^D", "The current debugging level in Perl."},
     {"$^V", "The version of Perl currently being used."},
-    {"$^X", "The value of the Perl interpreter's X option."}
+    {"$^X", "The value of the Perl interpreter's X option."},
     
     };
