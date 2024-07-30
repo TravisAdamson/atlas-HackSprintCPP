@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QMovie>
+
 #include <QString>
 #include <QLabel>
 #include <unordered_map>
@@ -24,8 +25,10 @@ Dialog::Dialog(QWidget *parent) :
     ui->setupUi(this);
 
     scoreLabel = ui->scoreLabel;
+    gameTitleLabel = ui->gameTitleLabel;  // Initialize the game title label
+    langName = ui->langName;  // Initialize the instructions label
     backWidget = ui->backgroundWidget;
-    startButton = ui->startButton;  // Initialize the start button
+    startButton = ui->startButton;
 
     backWidget->resize(746, 547);
     backWidget->setGeometry(0, 0, 746, 547);
@@ -47,6 +50,7 @@ Dialog::Dialog(QWidget *parent) :
     }
     ui->rerollButton->setVisible(false);
     scoreLabel->setVisible(false);
+    langName->setVisible(false);  // Hide instructions initially
 
     // Connect the start button to the slot
     connect(startButton, &QPushButton::clicked, this, &Dialog::onStartButtonClicked);
@@ -196,8 +200,11 @@ void Dialog::handleButtonClick(QPushButton *button)
 
 void Dialog::onStartButtonClicked()
 {
-    // Hide the start button and show the game elements
+    // Hide the start button, game title, and show the game elements
     startButton->setVisible(false);
+    gameTitleLabel->setVisible(false);
+    langName->setVisible(true);  // Show instructions when the game starts
+
     for (QPushButton* button : buttons) {
         button->setVisible(true);
     }

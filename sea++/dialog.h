@@ -25,7 +25,7 @@ public:
 private slots:
     void onButtonClicked();
     void resetGame();
-    void onStartButtonClicked();  // Add this slot
+    void onStartButtonClicked();
 
 private:
     void initializeButtons();
@@ -39,8 +39,10 @@ private:
     QList<QPushButton*> buttons;
     QMap<QPushButton*, QString> buttonValues;
     QLabel *scoreLabel;
+    QLabel *gameTitleLabel;  // Add this member
+    QLabel *langName;  // Add this member for instructions
     QWidget *backWidget;
-    QPushButton *startButton;  // Add this member
+    QPushButton *startButton;
     int points;
 };
 
