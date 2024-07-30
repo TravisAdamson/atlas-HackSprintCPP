@@ -1,0 +1,9 @@
+/home/matt/waves/build/Desktop-Debug/CMakeFiles/waves.dir
+/home/matt/waves/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/matt/waves/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/matt/waves/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/matt/waves/build/Desktop-Debug/CMakeFiles/install.dir
+/home/matt/waves/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/matt/waves/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/matt/waves/build/Desktop-Debug/CMakeFiles/waves_autogen_timestamp_deps.dir
+/home/matt/waves/build/Desktop-Debug/CMakeFiles/waves_autogen.dir
