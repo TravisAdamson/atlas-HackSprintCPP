@@ -133,17 +133,6 @@ const QStringList RubyTerms = {
     "if", "else", "for", "while", "do", "break", "continue", "return", "yield", "def"
 };
 
-// ObjectiveCTerms
-const QStringList ObjectiveCTerms = {
-    "int", "float", "double", "char", "id", "NSString", "NSArray", "NSDictionary", "UIView", "UIViewController",
-    "IBOutlet", "IBAction", "nonatomic", "atomic", "strong", "weak", "assign", "copy", "readonly", "readwrite",
-    "synthesize", "dynamic", "protocol", "delegate", "selector", "super", "self", "alloc", "init", "dealloc",
-    "retain", "release", "autorelease", "try", "catch", "finally", "throw", "NSLog", "NSUserDefaults", "NSNotification",
-    "NSNotificationCenter", "NSError", "NSFileManager", "NSFileHandle", "NSHTTPURLResponse", "NSURL", "NSURLRequest",
-    "NSURLSession", "NSURLSessionTask", "NSURLSessionDataTask", "NSURLSessionUploadTask", "NSURLSessionDownloadTask",
-    // Shared terms
-    "if", "else", "for", "while", "do", "break", "continue", "return"
-};
 
 // PerlTerms
 const QStringList PerlTerms = {
@@ -171,7 +160,6 @@ const QVector<QStringList> AllTerms = {
     FortranTerms,
     PhpTerms,
     RubyTerms,
-    ObjectiveCTerms,
     PerlTerms
 };
 

@@ -15,7 +15,6 @@ extern const QStringList RustTerms;
 extern const QStringList FortranTerms;
 extern const QStringList PhpTerms;
 extern const QStringList RubyTerms;
-extern const QStringList ObjectiveCTerms;
 extern const QStringList PerlTerms;
 extern const QVector<QStringList> AllTerms;
 extern QStringList correctValueTexts;
