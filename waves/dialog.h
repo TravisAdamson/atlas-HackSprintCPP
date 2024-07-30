@@ -28,6 +28,7 @@ private slots:
 private:
     void initializeButtons();
     void assignValuesToButtons();
+	void assignNewValueToButton(QPushButton *button);
     void handleButtonClick(QPushButton *button);
     void updateScore();
     void checkWinCondition();

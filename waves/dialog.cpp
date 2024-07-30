@@ -57,31 +57,47 @@ void Dialog::initializeButtons()
     }
 }
 
+void Dialog::assignNewValueToButton(QPushButton *button)
+{
+	std::random_device rd;
+	std::mt19937 generator1(rd());
+	std::mt19937 generator2(rd());
+	std::uniform_int_distribution<int> distribution1(0,11);
+	std::uniform_int_distribution<int> distribution2(0,41);
+	int which_list = distribution1(generator1);
+	int which_value = distribution2(generator2);
+	QString value = AllTerms[which_list][which_value];
+	buttonValues[button] = value;
+	button->setText(value);
+}
+
 void Dialog::assignValuesToButtons()
 {
 	std::random_device rd;
 	std::mt19937 generator1(rd());
 	std::mt19937 generator2(rd());
-	std::uniform_int_distribution<int> distribution1(0, 14);
+	std::uniform_int_distribution<int> distribution1(0, 11);
 	std::uniform_int_distribution<int> distribution2(0, 41);
 	int which_list = distribution1(generator1);
 	int which_value = distribution2(generator2);
 
 	correctValueTexts = AllTerms[which_list];
 	QString value = Titles[which_list];
-	ui->langName->setText(Titles[which_list]);
-    // Assign shuffled values to buttons
+	QString puzzleText = "Find the terms related to " + Titles[which_list];
+    ui->langName->setText(puzzleText);
+    // Assign random values to buttons
     for (int i = 0; i < buttons.size(); ++i) {
         QPushButton* button = buttons[i];
         if (button == nullptr) {
             qDebug() << "Button is null!";
             continue;
         }
+		which_list = distribution1(generator1);
+		which_value = distribution2(generator2);
         QString value = AllTerms[which_list][which_value];
         buttonValues[button] = value;  // Update internal value map
         button->setText(value);        // Update button text
-		which_list = distribution1(generator1);
-		which_value = distribution2(generator2);
+
 
         // Debugging output
         qDebug() << "Button" << i << "assigned value:" << value;
@@ -121,54 +137,48 @@ void Dialog::onButtonClicked()
 
 void Dialog::handleButtonClick(QPushButton *button)
 {
-    QString value = buttonValues[button]; // Get the original value of the button
+    QString value = buttonValues[button];
 
     if (correctValueTexts.contains(value)) {
-        QString winMessage = QString("You gained another chance.").arg(points);
-
-        button->setStyleSheet("background-color: green;"); // Set correct button color
-        QMessageBox winMsgBox(this);
-        winMsgBox.setText(winMessage);
-        winMsgBox.setWindowTitle(QString("%1 is correct!").arg(value));
-        winMsgBox.exec();
-        points += 50;
-
-        // Generate a new value for the button
-        std::random_device rd;
-        std::mt19937 generator(rd());
-        std::uniform_int_distribution<int> distribution1(0, 14);
-        std::uniform_int_distribution<int> distribution2(0, 41);
-
-        int which_list = distribution1(generator);
-        int which_value = distribution2(generator);
-
-        QString newValue = AllTerms[which_list][which_value];
-        
-        // Update the button text and value
-        button->setText(newValue);
-        buttonValues[button] = newValue;
-
+        button->setStyleSheet("background-color: green; color: white;"); // Assuming white text on green is readable
+        button->setDisabled(true);
+        points += 100;
+		updateScore();
     } else {
-        button->setStyleSheet("background-color: red; color: black;"); // Set incorrect button color
-        button->setDisabled(true); // Disable the button
-        button->setVisible(false); // Hide the button
-        points -= 100;
+		button->setDisabled(true);
+		points -= 50;
+		updateScore();
+        QTimer *timer = new QTimer(this); // `this` is the parent QObject
+		qDebug() << "Button text: " + button->text();
+		button->setStyleSheet("background-color: red; color: black;");
+        connect(timer, &QTimer::timeout, [this, button, timer]() {
+            // Ensure the button is still valid before using it
+            if (button) {
+				assignNewValueToButton(button);
+				qDebug() << "Button text: " + button->text();
+                button->setStyleSheet(""); // Reset to default or appropriate style
+                updateScore();
+                checkWinCondition();
+				button->setDisabled(false);
+            }
+            // Delete the timer once it’s done to avoid memory leaks
+            timer->deleteLater();
+		});
+		// Start the timer with a 5000 ms (5 seconds) interval
+		timer->start(2000);
+
+		return;
 
     }
 
-    // Clear focus from the button
-    button->clearFocus();
-
-    updateScore();
     checkWinCondition();
 }
 
 
-
-
-
 void Dialog::updateScore()
 {
+	if (points < 0)
+		points = 0;
     if (scoreLabel)
         scoreLabel->setText("Score: " + QString::number(points));
 }

@@ -13,8 +13,6 @@ extern const QStringList AssemblyTerms;
 extern const QStringList CTerms;
 extern const QStringList RustTerms;
 extern const QStringList FortranTerms;
-extern const QStringList AdaTerms;
-extern const QStringList SwiftTerms;
 extern const QStringList PhpTerms;
 extern const QStringList RubyTerms;
 extern const QStringList ObjectiveCTerms;

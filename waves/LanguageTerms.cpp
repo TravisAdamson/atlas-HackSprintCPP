@@ -92,24 +92,6 @@ const QStringList FortranTerms = {
     "query", "where", "forall", "array", "rank", "reshape", "transpose", "data", "save", "read", "write"
 };
 
-// AdaTerms
-const QStringList AdaTerms = {
-    "procedure", "function", "package", "type", "record", "access", "exception", "subtype", "tagged", "abstract",
-    "private", "public", "protected", "overriding", "overloading", "generic", "body", "begin", "end", "loop",
-    "exit", "for", "if", "else", "elsif", "case", "when", "select", "others", "task",
-    "entry", "accept", "terminate", "raise", "handle", "is", "not", "or", "and", "xor", "mod",
-    "rem", "divide", "relaxed", "true", "false", "null", "with", "use", "context", "in", "out", "abort", "declare"
-};
-
-// SwiftTerms
-const QStringList SwiftTerms = {
-    "var", "let", "func", "class", "struct", "enum", "protocol", "extension", "import", "guard",
-    "if", "else", "switch", "case", "default", "for", "while", "repeat", "break", "continue",
-    "return", "defer", "throw", "try", "catch", "async", "await", "self", "super",
-    "init", "deinit", "override", "typealias", "static", "final", "public", "private", "internal",
-    "fileprivate", "open", "lazy", "required", "dynamic", "inout", "some", "any", "never", "defer", "fatalError"
-};
-
 // PhpTerms
 const QStringList PhpTerms = {
     "echo", "print", "var", "public", "private", "protected", "class", "function", "return", "if",
@@ -160,8 +142,6 @@ const QVector<QStringList> AllTerms = {
     CTerms,
     RustTerms,
     FortranTerms,
-    AdaTerms,
-    SwiftTerms,
     PhpTerms,
     RubyTerms,
     ObjectiveCTerms,
@@ -170,5 +150,5 @@ const QVector<QStringList> AllTerms = {
 
 const QStringList Titles = {
     "C++", "Python", "Bash", "Java", "JavaScript", "Assembly", "C", "Rust", "Fortran",
-    "Ada", "Swift", "PHP", "Ruby", "Objective-C", "Perl"
+    "PHP", "Ruby", "Objective-C", "Perl"
 };
