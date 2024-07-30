@@ -152,3 +152,13 @@ const QStringList Titles = {
     "C++", "Python", "Bash", "Java", "JavaScript", "Assembly", "C", "Rust", "Fortran",
     "PHP", "Ruby", "Objective-C", "Perl"
 };
+
+const std::unordered_map<std::string, std::string> explanationMap = {
+        {"if", "if-explination"},
+        {"filler", "filler-explination"},
+        {"echo", "echo-explination"},
+        {"void", "void-explination"},
+        {"include", "include-explination"},
+        {"do", "do-explination"},
+        {"for", "for-explination"}
+    };

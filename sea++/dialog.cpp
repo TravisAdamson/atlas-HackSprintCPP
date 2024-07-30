@@ -154,25 +154,15 @@ void Dialog::onButtonClicked()
 
 void Dialog::handleButtonClick(QPushButton *button)
 {
-    static const std::unordered_map<std::string, std::string> explanationMap = {
-        {"if", "if-explination"},
-        {"filler", "filler-explination"},
-        {"echo", "echo-explination"},
-        {"void", "void-explination"},
-        {"include", "include-explination"},
-        {"do", "do-explination"},
-        {"for", "for-explination"}
-    };
-
     QString value = buttonValues[button];
     std::string valueStr = value.toStdString();
 
     if (correctValueTexts.contains(value)) {
         auto it = explanationMap.find(valueStr);
         if (it != explanationMap.end()) {
-            ui->langName->setText(QString::fromStdString(it->second));
+            button->setToolTip(QString::fromStdString(it->second));
         } else {
-            ui->langName->setText("unknown value");
+            button->setToolTip("unknown value");
         }
         button->setStyleSheet("background-color: green; color: white;");
         button->setDisabled(true);

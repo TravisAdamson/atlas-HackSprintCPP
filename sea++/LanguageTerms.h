@@ -20,5 +20,6 @@ extern const QStringList PerlTerms;
 extern const QVector<QStringList> AllTerms;
 extern QStringList correctValueTexts;
 extern const QStringList Titles;
+extern const std::unordered_map<std::string, std::string> explanationMap;
 
 #endif // LANGUAGETERMS_H
