@@ -188,15 +188,15 @@ background-color: beige;</string>
   <widget class="QLabel" name="langName">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>100</x>
      <y>10</y>
-     <width>481</width>
+     <width>541</width>
      <height>50</height>
     </rect>
    </property>
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-     <horstretch>1</horstretch>
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
@@ -226,11 +226,8 @@ background-color: beige;</string>
    <property name="text">
     <string>langName</string>
    </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignBottom|Qt::AlignHCenter</set>
    </property>
    <property name="indent">
     <number>0</number>
