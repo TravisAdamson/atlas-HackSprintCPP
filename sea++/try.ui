@@ -28,6 +28,13 @@
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -40,6 +47,13 @@
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -54,6 +68,13 @@
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -66,6 +87,13 @@
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -80,6 +108,13 @@
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -93,6 +128,13 @@
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -105,6 +147,13 @@
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -177,6 +226,9 @@ background-color: beige;</string>
    <property name="text">
     <string>langName</string>
    </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
@@ -246,6 +298,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -258,6 +317,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -272,6 +338,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -284,6 +357,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -298,6 +378,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -310,6 +397,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -324,6 +418,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -336,6 +437,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -350,6 +458,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -362,6 +477,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -376,6 +498,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -388,6 +517,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -402,6 +538,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -414,6 +557,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -428,6 +578,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -440,6 +597,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -454,6 +618,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -466,6 +637,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -480,6 +658,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -492,6 +677,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -506,6 +698,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -519,6 +718,13 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -531,6 +737,13 @@ background-color: beige;</string>
      <width>120</width>
      <height>80</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: blue;
+background-color: beige;</string>
    </property>
    <property name="text">
     <string/>
@@ -555,10 +768,10 @@ background-color: beige;</string>
   <widget class="QLabel" name="gameTitleLabel">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>190</x>
      <y>80</y>
-     <width>271</width>
-     <height>81</height>
+     <width>361</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="font">
@@ -568,7 +781,17 @@ background-color: beige;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: orange;</string>
+    <string notr="true">color: blue;
+background-color: beige;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <property name="lineWidth">
+    <number>5</number>
    </property>
    <property name="text">
     <string>Sea++</string>
