@@ -41,6 +41,7 @@ private:
     QLabel *scoreLabel;
     QLabel *gameTitleLabel;  // Add this member
     QLabel *langName;  // Add this member for instructions
+	QLabel *gifLabel;
     QWidget *backWidget;
     QPushButton *startButton;
     int points;

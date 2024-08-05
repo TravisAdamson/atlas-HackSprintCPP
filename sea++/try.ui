@@ -16,8 +16,12 @@
   <property name="windowTitle">
    <string>Sea++</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color: blue;
+background: transparent;</string>
   </property>
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
@@ -28,12 +32,22 @@
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -48,12 +62,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -68,12 +92,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -88,12 +122,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -108,12 +152,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -128,12 +182,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -148,12 +212,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -169,7 +243,7 @@ background-color: beige;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background: transparent;</string>
    </property>
    <widget class="QLabel" name="backgroundLabel">
     <property name="geometry">
@@ -179,6 +253,9 @@ background-color: beige;</string>
       <width>740</width>
       <height>550</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;</string>
     </property>
     <property name="text">
      <string/>
@@ -212,7 +289,7 @@ background-color: beige;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color: blue;
-background-color: beige;</string>
+background-color: blanchedalmond;</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Box</enum>
@@ -271,7 +348,7 @@ background-color: beige;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color: blue;
-background-color: beige;</string>
+background-color: blanchedalmond;</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Box</enum>
@@ -295,12 +372,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -315,12 +402,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -335,12 +432,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -355,12 +462,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -375,12 +492,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -395,12 +522,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -415,12 +552,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -435,12 +582,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -455,12 +612,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -475,12 +642,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -495,12 +672,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -515,12 +702,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -535,12 +732,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -555,12 +762,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -575,12 +792,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -595,12 +822,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -615,12 +852,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -635,12 +882,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -655,12 +912,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -675,12 +942,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -695,12 +972,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -715,12 +1002,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -735,12 +1032,22 @@ background-color: beige;</string>
      <height>80</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: beige;</string>
+    <string notr="true">color: rgb(255, 255, 255);
+background-color: blanchedalmond;
+border-image:url(gif/crate.jpg);
+background: transparent;
+padding: 3px;</string>
    </property>
    <property name="text">
     <string/>
@@ -749,14 +1056,29 @@ background-color: beige;</string>
   <widget class="QPushButton" name="startButton">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>260</y>
-     <width>80</width>
-     <height>23</height>
+     <x>310</x>
+     <y>240</y>
+     <width>140</width>
+     <height>140</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans</family>
+     <pointsize>16</pointsize>
+     <weight>9</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: orange;</string>
+    <string notr="true">color: rgb(0, 255, 0);
+font: 75 16pt &quot;DejaVu Sans&quot;;
+background-color: transparent;
+border: none;
+text-align: left;
+padding-left: 25px;
+padding-bottom: 55px;</string>
    </property>
    <property name="text">
     <string>Begin</string>
@@ -779,7 +1101,7 @@ background-color: beige;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color: blue;
-background-color: beige;</string>
+background-color: blanchedalmond;</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Box</enum>
@@ -792,6 +1114,19 @@ background-color: beige;</string>
    </property>
    <property name="text">
     <string>Sea++</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gifLabel">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>240</y>
+     <width>140</width>
+     <height>140</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
   <zorder>backgroundWidget</zorder>
@@ -828,8 +1163,9 @@ background-color: beige;</string>
   <zorder>pushButton_20</zorder>
   <zorder>pushButton_19</zorder>
   <zorder>pushButton_25</zorder>
-  <zorder>startButton</zorder>
   <zorder>gameTitleLabel</zorder>
+  <zorder>gifLabel</zorder>
+  <zorder>startButton</zorder>
  </widget>
  <tabstops>
   <tabstop>pushButton_1</tabstop>
