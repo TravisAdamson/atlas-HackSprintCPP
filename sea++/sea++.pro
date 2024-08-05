@@ -1,4 +1,5 @@
-QT += widgets
+QT += core gui widgets \
+    multimedia
 
 TARGET = sea++
 TEMPLATE = app
@@ -14,3 +15,6 @@ HEADERS += \
 
 FORMS += \
     try.ui
+
+RESOURCES += \
+    res.qrc

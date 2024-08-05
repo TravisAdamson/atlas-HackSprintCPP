@@ -14,6 +14,7 @@
 #include <QLabel>
 #include <unordered_map>
 #include <functional>
+#include <QMediaPlayer>
 
 const int NUM_BUTTONS = 30;
 
@@ -29,19 +30,23 @@ Dialog::Dialog(QWidget *parent) :
     langName = ui->langName;  // Initialize the instructions label
     backWidget = ui->backgroundWidget;
     startButton = ui->startButton;
+	gifLabel = ui->gifLabel;
 
     backWidget->resize(750, 550);
     backWidget->setGeometry(0, 0, 750, 550);
     QLabel *backgroundLabel = new QLabel(backWidget);
     QMovie *movie = new QMovie("gif/water_pa.gif");
+	QMovie *backmovie = new QMovie("gif/gifframe.gif");
 
+	gifLabel->setMovie(backmovie);
+	backmovie->start();
     backgroundLabel->setMovie(movie);
     movie->start();
     backgroundLabel->resize(750, 550);
     backgroundLabel->setGeometry(0, 0, 750, 550);
     backgroundLabel->setScaledContents(true);
     backgroundLabel->show();
-
+	qDebug() << startButton->styleSheet();
     initializeButtons();
     assignValuesToButtons();
 
@@ -160,9 +165,14 @@ void Dialog::handleButtonClick(QPushButton *button)
 {
     QString value = buttonValues[button];
     std::string valueStr = value.toStdString();
+	QMediaPlayer *effect = new QMediaPlayer(this);
+	QMediaPlayer *ceffect = new QMediaPlayer(this);
 
+	ceffect->setMedia(QUrl("qrc:sound/gif/correct.mp3"));
+	effect->setMedia(QUrl("qrc:sound/gif/buzzer.mp3"));
     if (correctValueTexts.contains(value)) {
         auto it = explanationMap.find(valueStr);
+		ceffect->play();
         if (it != explanationMap.end()) {
             button->setToolTip(QString::fromStdString(it->second));
         } else {
@@ -173,13 +183,14 @@ void Dialog::handleButtonClick(QPushButton *button)
         points += 100;
         updateScore();
     } else {
+		effect->play();
         button->setDisabled(true);
         points -= 50;
         updateScore();
         QTimer *timer = new QTimer(this);
         qDebug() << "Button text: " + button->text();
         button->setStyleSheet("background-color: red; color: black;");
-        
+
         connect(timer, &QTimer::timeout, [this, button, timer]() {
             if (button) {
                 assignNewValueToButton(button);

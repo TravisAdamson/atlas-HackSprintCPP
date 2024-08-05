@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/sound">
+        <file>gif/buzzer.mp3</file>
+        <file>gif/correct.mp3</file>
+    </qresource>
+    <qresource prefix="/img">
+        <file>gif/crate.jpg</file>
+        <file>gif/water_pa.gif</file>
+    </qresource>
+</RCC>
