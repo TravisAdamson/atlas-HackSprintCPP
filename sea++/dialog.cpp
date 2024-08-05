@@ -30,14 +30,15 @@ Dialog::Dialog(QWidget *parent) :
     backWidget = ui->backgroundWidget;
     startButton = ui->startButton;
 
-    backWidget->resize(746, 547);
-    backWidget->setGeometry(0, 0, 746, 547);
+    backWidget->resize(750, 550);
+    backWidget->setGeometry(0, 0, 750, 550);
     QLabel *backgroundLabel = new QLabel(backWidget);
     QMovie *movie = new QMovie("gif/water_pa.gif");
+
     backgroundLabel->setMovie(movie);
     movie->start();
-    backgroundLabel->resize(746, 547);
-    backgroundLabel->setGeometry(0, 0, 746, 547);
+    backgroundLabel->resize(750, 550);
+    backgroundLabel->setGeometry(0, 0, 750, 550);
     backgroundLabel->setScaledContents(true);
     backgroundLabel->show();
 
