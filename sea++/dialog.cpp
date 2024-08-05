@@ -142,7 +142,7 @@ void Dialog::resetGame()
     updateScore();
 
     for (QPushButton* button : buttons) {
-        button->setStyleSheet("");
+        button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(gif/crate.jpg);\nbackground: transparent;\npadding: 3px;");
         button->setDisabled(false);
     }
 
@@ -178,7 +178,7 @@ void Dialog::handleButtonClick(QPushButton *button)
         } else {
             button->setToolTip("unknown value");
         }
-        button->setStyleSheet("background-color: green; color: white;");
+        button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(gif/cratec.jpg);\nbackground: transparent;\npadding: 3px;");
         button->setDisabled(true);
         points += 100;
         updateScore();
@@ -189,13 +189,13 @@ void Dialog::handleButtonClick(QPushButton *button)
         updateScore();
         QTimer *timer = new QTimer(this);
         qDebug() << "Button text: " + button->text();
-        button->setStyleSheet("background-color: red; color: black;");
+        		button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(gif/cratei.jpg);\nbackground: transparent;\npadding: 3px;");
 
         connect(timer, &QTimer::timeout, [this, button, timer]() {
             if (button) {
                 assignNewValueToButton(button);
                 qDebug() << "Button text: " + button->text();
-                button->setStyleSheet("");
+        		button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(gif/crate.jpg);\nbackground: transparent;\npadding: 3px;");
                 updateScore();
                 checkWinCondition();
                 button->setDisabled(false);
@@ -213,6 +213,7 @@ void Dialog::handleButtonClick(QPushButton *button)
 void Dialog::onStartButtonClicked()
 {
     // Hide the start button, game title, and show the game elements
+	gifLabel->setVisible(false);
     startButton->setVisible(false);
     gameTitleLabel->setVisible(false);
     langName->setVisible(true);  // Show instructions when the game starts
