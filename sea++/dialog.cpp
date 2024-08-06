@@ -36,7 +36,7 @@ Dialog::Dialog(QWidget *parent) :
     backWidget->setGeometry(0, 0, 750, 550);
     QLabel *backgroundLabel = new QLabel(backWidget);
     QMovie *movie = new QMovie("gif/water_pa.gif");
-	QMovie *backmovie = new QMovie("gif/gifframe.gif");
+	QMovie *backmovie = new QMovie("gif/cratego.gif");
 
 	gifLabel->setMovie(backmovie);
 	backmovie->start();
@@ -165,8 +165,6 @@ void Dialog::handleButtonClick(QPushButton *button)
 {
     QString value = buttonValues[button];
     std::string valueStr = value.toStdString();
-	QMediaPlayer *effect = new QMediaPlayer(this);
-	QMediaPlayer *ceffect = new QMediaPlayer(this);
 
 	ceffect->setMedia(QUrl("qrc:sound/gif/correct.mp3"));
 	effect->setMedia(QUrl("qrc:sound/gif/buzzer.mp3"));
