@@ -21,7 +21,8 @@ const int NUM_BUTTONS = 30;
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog),
-    points(0)
+    points(0),
+    messageBoxOpen(false)
 {
     ui->setupUi(this);
 
@@ -36,7 +37,7 @@ Dialog::Dialog(QWidget *parent) :
     backWidget->setGeometry(0, 0, 750, 550);
     QLabel *backgroundLabel = new QLabel(backWidget);
     QMovie *movie = new QMovie("gif/water_pa.gif");
-	QMovie *backmovie = new QMovie("gif/gifframe.gif");
+	QMovie *backmovie = new QMovie("gif/cratego.gif");
 
 	gifLabel->setMovie(backmovie);
 	backmovie->start();
@@ -165,8 +166,6 @@ void Dialog::handleButtonClick(QPushButton *button)
 {
     QString value = buttonValues[button];
     std::string valueStr = value.toStdString();
-	QMediaPlayer *effect = new QMediaPlayer(this);
-	QMediaPlayer *ceffect = new QMediaPlayer(this);
 
 	ceffect->setMedia(QUrl("qrc:sound/gif/correct.mp3"));
 	effect->setMedia(QUrl("qrc:sound/gif/buzzer.mp3"));
@@ -235,7 +234,14 @@ void Dialog::updateScore()
 
 void Dialog::checkWinCondition()
 {
+    if (messageBoxOpen) {
+        // If a message box is already open, do nothing
+        return;
+    }
+
     bool allCorrectButtonsGreenOrBlue = true;
+    QString definitionsList;  // To hold the list of term definitions
+    QSet<QString> listedTerms;  // To keep track of already listed terms
 
     for (QPushButton* button : buttons) {
         QString style = button->styleSheet();
@@ -246,21 +252,64 @@ void Dialog::checkWinCondition()
                 allCorrectButtonsGreenOrBlue = false;
                 break;
             }
+
+            // Retrieve the definition for the correct term
+            std::string valueStr = text.toStdString();
+            auto it = explanationMap.find(valueStr);
+
+            if (it != explanationMap.end()) {
+                // Only add the term if it hasn't been added yet
+                if (!listedTerms.contains(text)) {
+                    listedTerms.insert(text);
+                    definitionsList += QString("<b><font color='blue'>%1</font></b> - <font color='green'>%2</font><br>")
+                                       .arg(text)
+                                       .arg(QString::fromStdString(it->second));
+                }
+            } else {
+                // Only add the term if it hasn't been added yet
+                if (!listedTerms.contains(text)) {
+                    listedTerms.insert(text);
+                    definitionsList += QString("<b><font color='blue'>%1</font></b> - <font color='green'>Definition not found.</font><br>")
+                                       .arg(text);
+                }
+            }
         }
     }
 
     if (allCorrectButtonsGreenOrBlue) {
-        QString winMessage = QString("Your score is: %1").arg(points);
-
+        for (QPushButton* button : buttons) {
+            button->setDisabled(true);
+        }
+        // QString winMessage = QString("<font color='green' size='10'>Your score is: %1</font><br><br>")
+                             + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
+        QString winMessage = QString("<font color='green' size='10'>"
+                        "Your score is: <span style='font-family: monospace; color: #00FF00; background-color: #000000; padding: 2px; border-radius: 5px;'>%1</span>"
+                        "</font><br><br>").arg(points) + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
+ 
         QMessageBox winMsgBox(this);
-        winMsgBox.setText(winMessage);
+        winMsgBox.setGeometry(0, 0, 400, 300);
+        winMsgBox.setStyleSheet("color: black;\nbackground-color: white");
+        winMsgBox.setText(winMessage.arg(points)); // Inject points into the message
         winMsgBox.setWindowTitle("Congratulations!");
 
         QPushButton *playAgainButton = winMsgBox.addButton("Play Again", QMessageBox::ActionRole);
         QPushButton *exitButton = winMsgBox.addButton("Quit", QMessageBox::RejectRole);
 
+        playAgainButton->setDisabled(false);
+        exitButton->setDisabled(false);
+        playAgainButton->setFocusPolicy(Qt::NoFocus);
+        exitButton->setFocusPolicy(Qt::NoFocus);
+
+        // Set the flag to true when the message box is about to be shown
+        messageBoxOpen = true;
+
         connect(playAgainButton, &QPushButton::clicked, this, &Dialog::resetGame);
         connect(exitButton, &QPushButton::clicked, QApplication::instance(), &QApplication::quit);
+
+        // Ensure the flag is reset when the message box is closed
+        connect(&winMsgBox, &QMessageBox::finished, this, [this]() {
+            messageBoxOpen = false;
+        });
 
         winMsgBox.exec();
     }

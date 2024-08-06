@@ -9,6 +9,7 @@
 #include <QStringList>
 #include <QRandomGenerator>
 #include <QWidget>
+#include <QMediaPlayer>
 
 namespace Ui {
 class Dialog;
@@ -44,7 +45,10 @@ private:
 	QLabel *gifLabel;
     QWidget *backWidget;
     QPushButton *startButton;
-    int points;
+	QMediaPlayer *effect = new QMediaPlayer(this);
+	QMediaPlayer *ceffect = new QMediaPlayer(this);
+	int points;
+    bool messageBoxOpen;
 };
 
 #endif // DIALOG_H

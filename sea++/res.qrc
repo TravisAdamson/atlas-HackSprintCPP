@@ -5,8 +5,9 @@
     </qresource>
     <qresource prefix="/img">
         <file>gif/crate.jpg</file>
-		<file>gif/cratec.jpg</file>
-		<file>gif/cratei.jpg</file>
+        <file>gif/cratec.jpg</file>
+        <file>gif/cratei.jpg</file>
         <file>gif/water_pa.gif</file>
+        <file>gif/cratego.gif</file>
     </qresource>
 </RCC>
