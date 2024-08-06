@@ -280,8 +280,12 @@ void Dialog::checkWinCondition()
         for (QPushButton* button : buttons) {
             button->setDisabled(true);
         }
-        QString winMessage = QString("Congratulations! Your score is: %1<br><br>")
+        // QString winMessage = QString("<font color='green' size='10'>Your score is: %1</font><br><br>")
                              + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
+        QString winMessage = QString("<font color='green' size='10'>"
+                        "Your score is: <span style='font-family: monospace; color: #00FF00; background-color: #000000; padding: 2px; border-radius: 5px;'>%1</span>"
+                        "</font><br><br>").arg(points) + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
+ 
         QMessageBox winMsgBox(this);
         winMsgBox.setGeometry(0, 0, 400, 300);
         winMsgBox.setStyleSheet("color: black;\nbackground-color: white");

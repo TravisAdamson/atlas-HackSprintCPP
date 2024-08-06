@@ -18,3 +18,4 @@ FORMS += \
 
 RESOURCES += \
     res.qrc
+
