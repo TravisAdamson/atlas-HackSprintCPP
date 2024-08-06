@@ -33,8 +33,8 @@ Dialog::Dialog(QWidget *parent) :
     startButton = ui->startButton;
 	gifLabel = ui->gifLabel;
 
-    backWidget->resize(750, 550);
-    backWidget->setGeometry(0, 0, 750, 550);
+    backWidget->resize(800, 600);
+    backWidget->setGeometry(0, 0, 800, 600);
     QLabel *backgroundLabel = new QLabel(backWidget);
     QMovie *movie = new QMovie("gif/water_pa.gif");
 	QMovie *backmovie = new QMovie("gif/cratego.gif");
@@ -43,8 +43,8 @@ Dialog::Dialog(QWidget *parent) :
 	backmovie->start();
     backgroundLabel->setMovie(movie);
     movie->start();
-    backgroundLabel->resize(750, 550);
-    backgroundLabel->setGeometry(0, 0, 750, 550);
+    backgroundLabel->resize(800, 600);
+    backgroundLabel->setGeometry(0, 0, 800, 600);
     backgroundLabel->setScaledContents(true);
     backgroundLabel->show();
 	qDebug() << startButton->styleSheet();
