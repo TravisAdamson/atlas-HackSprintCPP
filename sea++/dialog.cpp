@@ -240,6 +240,8 @@ void Dialog::checkWinCondition()
     }
 
     bool allCorrectButtonsGreenOrBlue = true;
+    QString definitionsList;  // To hold the list of term definitions
+    QSet<QString> listedTerms;  // To keep track of already listed terms
 
     for (QPushButton* button : buttons) {
         QString style = button->styleSheet();
@@ -250,6 +252,27 @@ void Dialog::checkWinCondition()
                 allCorrectButtonsGreenOrBlue = false;
                 break;
             }
+
+            // Retrieve the definition for the correct term
+            std::string valueStr = text.toStdString();
+            auto it = explanationMap.find(valueStr);
+
+            if (it != explanationMap.end()) {
+                // Only add the term if it hasn't been added yet
+                if (!listedTerms.contains(text)) {
+                    listedTerms.insert(text);
+                    definitionsList += QString("<b><font color='blue'>%1</font></b> - <font color='green'>%2</font><br>")
+                                       .arg(text)
+                                       .arg(QString::fromStdString(it->second));
+                }
+            } else {
+                // Only add the term if it hasn't been added yet
+                if (!listedTerms.contains(text)) {
+                    listedTerms.insert(text);
+                    definitionsList += QString("<b><font color='blue'>%1</font></b> - <font color='green'>Definition not found.</font><br>")
+                                       .arg(text);
+                }
+            }
         }
     }
 
@@ -257,12 +280,12 @@ void Dialog::checkWinCondition()
         for (QPushButton* button : buttons) {
             button->setDisabled(true);
         }
-        QString winMessage = QString("Your score is: %1").arg(points);
-
+        QString winMessage = QString("Congratulations! Your score is: %1<br><br>")
+                             + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
         QMessageBox winMsgBox(this);
-		winMsgBox.setGeometry(0, 0, 25, 25);
+        winMsgBox.setGeometry(0, 0, 400, 300);
         winMsgBox.setStyleSheet("color: black;\nbackground-color: white");
-        winMsgBox.setText(winMessage);
+        winMsgBox.setText(winMessage.arg(points)); // Inject points into the message
         winMsgBox.setWindowTitle("Congratulations!");
 
         QPushButton *playAgainButton = winMsgBox.addButton("Play Again", QMessageBox::ActionRole);
@@ -270,8 +293,8 @@ void Dialog::checkWinCondition()
 
         playAgainButton->setDisabled(false);
         exitButton->setDisabled(false);
-		playAgainButton->setFocusPolicy(Qt::NoFocus);
-		exitButton->setFocusPolicy(Qt::NoFocus);
+        playAgainButton->setFocusPolicy(Qt::NoFocus);
+        exitButton->setFocusPolicy(Qt::NoFocus);
 
         // Set the flag to true when the message box is about to be shown
         messageBoxOpen = true;
