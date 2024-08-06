@@ -228,9 +228,15 @@ void Dialog::updateScore()
 {
     if (points < 0)
         points = 0;
+    
     if (scoreLabel)
-        scoreLabel->setText("Score: " + QString::number(points));
+    {
+        // Correctly format HTML string
+        QString scoreText = QString("<font face='monospace' color= blue style='background-color: blanchedalmond;'>Score: %1</font>").arg(points);
+        scoreLabel->setText(scoreText);
+    }
 }
+
 
 void Dialog::checkWinCondition()
 {
@@ -281,7 +287,7 @@ void Dialog::checkWinCondition()
             button->setDisabled(true);
         }
         // QString winMessage = QString("<font color='green' size='10'>Your score is: %1</font><br><br>")
-                             + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
+        //                     + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
         QString winMessage = QString("<font color='green' size='10'>"
                         "Your score is: <span style='font-family: monospace; color: #00FF00; background-color: #000000; padding: 2px; border-radius: 5px;'>%1</span>"
                         "</font><br><br>").arg(points) + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
