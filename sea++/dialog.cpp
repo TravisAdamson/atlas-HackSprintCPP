@@ -270,6 +270,8 @@ void Dialog::checkWinCondition()
 
         playAgainButton->setDisabled(false);
         exitButton->setDisabled(false);
+		playAgainButton->setFocusPolicy(Qt::NoFocus);
+		exitButton->setFocusPolicy(Qt::NoFocus);
 
         // Set the flag to true when the message box is about to be shown
         messageBoxOpen = true;
