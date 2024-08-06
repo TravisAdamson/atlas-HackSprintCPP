@@ -260,6 +260,7 @@ void Dialog::checkWinCondition()
         QString winMessage = QString("Your score is: %1").arg(points);
 
         QMessageBox winMsgBox(this);
+		winMsgBox.setGeometry(0, 0, 25, 25);
         winMsgBox.setStyleSheet("color: black;\nbackground-color: white");
         winMsgBox.setText(winMessage);
         winMsgBox.setWindowTitle("Congratulations!");
