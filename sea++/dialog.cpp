@@ -248,15 +248,21 @@ void Dialog::checkWinCondition()
     }
 
     if (allCorrectButtonsGreenOrBlue) {
+		for (QPushButton* button : buttons) {
+        	button->setDisabled(true);
+    	}
         QString winMessage = QString("Your score is: %1").arg(points);
 
         QMessageBox winMsgBox(this);
+		winMsgBox.setStyleSheet("color: black;\nbackground-color: white");
         winMsgBox.setText(winMessage);
         winMsgBox.setWindowTitle("Congratulations!");
 
         QPushButton *playAgainButton = winMsgBox.addButton("Play Again", QMessageBox::ActionRole);
         QPushButton *exitButton = winMsgBox.addButton("Quit", QMessageBox::RejectRole);
 
+		playAgainButton->setDisabled(false);
+		exitButton->setDisabled(false);
         connect(playAgainButton, &QPushButton::clicked, this, &Dialog::resetGame);
         connect(exitButton, &QPushButton::clicked, QApplication::instance(), &QApplication::quit);
 
