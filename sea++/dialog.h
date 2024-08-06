@@ -35,7 +35,6 @@ private:
     void handleButtonClick(QPushButton *button);
     void updateScore();
     void checkWinCondition();
-    bool messageBoxOpen;
 
     Ui::Dialog *ui;
     QList<QPushButton*> buttons;
@@ -48,7 +47,8 @@ private:
     QPushButton *startButton;
 	QMediaPlayer *effect = new QMediaPlayer(this);
 	QMediaPlayer *ceffect = new QMediaPlayer(this);
-    int points;
+	int points;
+    bool messageBoxOpen;
 };
 
 #endif // DIALOG_H
