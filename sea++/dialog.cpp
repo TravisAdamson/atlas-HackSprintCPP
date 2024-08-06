@@ -178,7 +178,7 @@ void Dialog::handleButtonClick(QPushButton *button)
         } else {
             button->setToolTip("unknown value");
         }
-        button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(gif/cratec.jpg);\nbackground: transparent;\npadding: 3px;");
+        button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: green;\nborder-image:url(:/img/gif/cratec.jpg);\nbackground: transparent;\npadding: 3px;");
         button->setDisabled(true);
         points += 100;
         updateScore();
@@ -189,13 +189,13 @@ void Dialog::handleButtonClick(QPushButton *button)
         updateScore();
         QTimer *timer = new QTimer(this);
         qDebug() << "Button text: " + button->text();
-        		button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(gif/cratei.jpg);\nbackground: transparent;\npadding: 3px;");
+        		button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(:/img/gif/cratei.jpg);\nbackground: transparent;\npadding: 3px;");
 
         connect(timer, &QTimer::timeout, [this, button, timer]() {
             if (button) {
                 assignNewValueToButton(button);
                 qDebug() << "Button text: " + button->text();
-        		button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(gif/crate.jpg);\nbackground: transparent;\npadding: 3px;");
+        		button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(:/img/gif/crate.jpg);\nbackground: transparent;\npadding: 3px;");
                 updateScore();
                 checkWinCondition();
                 button->setDisabled(false);
