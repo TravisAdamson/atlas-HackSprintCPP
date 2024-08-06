@@ -27,7 +27,7 @@ background: transparent;</string>
    <property name="geometry">
     <rect>
      <x>269</x>
-     <y>70</y>
+     <y>96</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -57,7 +57,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>137</x>
-     <y>70</y>
+     <y>96</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -87,7 +87,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>269</x>
-     <y>152</y>
+     <y>178</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -117,7 +117,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>269</x>
-     <y>234</y>
+     <y>260</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -147,7 +147,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>269</x>
-     <y>316</y>
+     <y>342</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -177,7 +177,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>269</x>
-     <y>398</y>
+     <y>424</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -207,7 +207,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>137</x>
-     <y>398</y>
+     <y>424</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -266,7 +266,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>130</x>
-     <y>10</y>
+     <y>25</y>
      <width>541</width>
      <height>50</height>
     </rect>
@@ -314,7 +314,7 @@ background-color: blanchedalmond;</string>
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>510</y>
+     <y>540</y>
      <width>100</width>
      <height>25</height>
     </rect>
@@ -332,8 +332,8 @@ background-color: blanchedalmond;</string>
   <widget class="QLabel" name="scoreLabel">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>490</y>
+     <x>20</x>
+     <y>520</y>
      <width>241</width>
      <height>61</height>
     </rect>
@@ -367,7 +367,7 @@ background-color: blanchedalmond;</string>
    <property name="geometry">
     <rect>
      <x>5</x>
-     <y>152</y>
+     <y>178</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -397,7 +397,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>137</x>
-     <y>234</y>
+     <y>260</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -427,7 +427,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>137</x>
-     <y>152</y>
+     <y>178</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -457,7 +457,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>5</x>
-     <y>70</y>
+     <y>96</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -487,7 +487,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>533</x>
-     <y>398</y>
+     <y>424</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -517,7 +517,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>533</x>
-     <y>316</y>
+     <y>342</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -547,7 +547,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>533</x>
-     <y>234</y>
+     <y>260</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -577,7 +577,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>533</x>
-     <y>152</y>
+     <y>178</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -607,7 +607,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>533</x>
-     <y>70</y>
+     <y>96</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -637,7 +637,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>401</x>
-     <y>398</y>
+     <y>424</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -667,7 +667,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>401</x>
-     <y>316</y>
+     <y>342</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -697,7 +697,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>401</x>
-     <y>234</y>
+     <y>260</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -727,7 +727,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>401</x>
-     <y>152</y>
+     <y>178</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -757,7 +757,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>401</x>
-     <y>70</y>
+     <y>96</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -787,7 +787,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>665</x>
-     <y>316</y>
+     <y>342</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -817,7 +817,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>665</x>
-     <y>398</y>
+     <y>424</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -847,7 +847,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>665</x>
-     <y>234</y>
+     <y>260</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -877,7 +877,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>665</x>
-     <y>152</y>
+     <y>178</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -907,7 +907,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>665</x>
-     <y>70</y>
+     <y>96</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -937,7 +937,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>5</x>
-     <y>234</y>
+     <y>260</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -967,7 +967,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>137</x>
-     <y>316</y>
+     <y>342</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -997,7 +997,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>5</x>
-     <y>316</y>
+     <y>342</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -1027,7 +1027,7 @@ padding: 3px;</string>
    <property name="geometry">
     <rect>
      <x>5</x>
-     <y>398</y>
+     <y>424</y>
      <width>130</width>
      <height>80</height>
     </rect>
@@ -1088,7 +1088,7 @@ padding-bottom: 55px;</string>
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>80</y>
+     <y>90</y>
      <width>361</width>
      <height>111</height>
     </rect>
