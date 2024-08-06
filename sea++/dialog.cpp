@@ -33,8 +33,8 @@ Dialog::Dialog(QWidget *parent) :
     startButton = ui->startButton;
 	gifLabel = ui->gifLabel;
 
-    backWidget->resize(750, 550);
-    backWidget->setGeometry(0, 0, 750, 550);
+    backWidget->resize(800, 600);
+    backWidget->setGeometry(0, 0, 800, 600);
     QLabel *backgroundLabel = new QLabel(backWidget);
     QMovie *movie = new QMovie("gif/water_pa.gif");
 	QMovie *backmovie = new QMovie("gif/cratego.gif");
@@ -43,8 +43,8 @@ Dialog::Dialog(QWidget *parent) :
 	backmovie->start();
     backgroundLabel->setMovie(movie);
     movie->start();
-    backgroundLabel->resize(750, 550);
-    backgroundLabel->setGeometry(0, 0, 750, 550);
+    backgroundLabel->resize(800, 600);
+    backgroundLabel->setGeometry(0, 0, 800, 600);
     backgroundLabel->setScaledContents(true);
     backgroundLabel->show();
 	qDebug() << startButton->styleSheet();
@@ -228,9 +228,15 @@ void Dialog::updateScore()
 {
     if (points < 0)
         points = 0;
+    
     if (scoreLabel)
-        scoreLabel->setText("Score: " + QString::number(points));
+    {
+        // Correctly format HTML string
+        QString scoreText = QString("<font face='monospace' color= blue style='background-color: blanchedalmond;'>Score: %1</font>").arg(points);
+        scoreLabel->setText(scoreText);
+    }
 }
+
 
 void Dialog::checkWinCondition()
 {
@@ -281,7 +287,7 @@ void Dialog::checkWinCondition()
             button->setDisabled(true);
         }
         // QString winMessage = QString("<font color='green' size='10'>Your score is: %1</font><br><br>")
-                             + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
+        //                     + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
         QString winMessage = QString("<font color='green' size='10'>"
                         "Your score is: <span style='font-family: monospace; color: #00FF00; background-color: #000000; padding: 2px; border-radius: 5px;'>%1</span>"
                         "</font><br><br>").arg(points) + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
