@@ -35,6 +35,7 @@ private:
     void handleButtonClick(QPushButton *button);
     void updateScore();
     void checkWinCondition();
+    bool messageBoxOpen;
 
     Ui::Dialog *ui;
     QList<QPushButton*> buttons;

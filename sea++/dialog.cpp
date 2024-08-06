@@ -21,7 +21,8 @@ const int NUM_BUTTONS = 30;
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog),
-    points(0)
+    points(0),
+    messageBoxOpen(false)
 {
     ui->setupUi(this);
 
@@ -233,6 +234,11 @@ void Dialog::updateScore()
 
 void Dialog::checkWinCondition()
 {
+    if (messageBoxOpen) {
+        // If a message box is already open, do nothing
+        return;
+    }
+
     bool allCorrectButtonsGreenOrBlue = true;
 
     for (QPushButton* button : buttons) {
@@ -248,23 +254,32 @@ void Dialog::checkWinCondition()
     }
 
     if (allCorrectButtonsGreenOrBlue) {
-		for (QPushButton* button : buttons) {
-        	button->setDisabled(true);
-    	}
+        for (QPushButton* button : buttons) {
+            button->setDisabled(true);
+        }
         QString winMessage = QString("Your score is: %1").arg(points);
 
         QMessageBox winMsgBox(this);
-		winMsgBox.setStyleSheet("color: black;\nbackground-color: white");
+        winMsgBox.setStyleSheet("color: black;\nbackground-color: white");
         winMsgBox.setText(winMessage);
         winMsgBox.setWindowTitle("Congratulations!");
 
         QPushButton *playAgainButton = winMsgBox.addButton("Play Again", QMessageBox::ActionRole);
         QPushButton *exitButton = winMsgBox.addButton("Quit", QMessageBox::RejectRole);
 
-		playAgainButton->setDisabled(false);
-		exitButton->setDisabled(false);
+        playAgainButton->setDisabled(false);
+        exitButton->setDisabled(false);
+
+        // Set the flag to true when the message box is about to be shown
+        messageBoxOpen = true;
+
         connect(playAgainButton, &QPushButton::clicked, this, &Dialog::resetGame);
         connect(exitButton, &QPushButton::clicked, QApplication::instance(), &QApplication::quit);
+
+        // Ensure the flag is reset when the message box is closed
+        connect(&winMsgBox, &QMessageBox::finished, this, [this]() {
+            messageBoxOpen = false;
+        });
 
         winMsgBox.exec();
     }
