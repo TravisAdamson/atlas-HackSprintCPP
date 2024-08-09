@@ -45,7 +45,7 @@ Dialog::Dialog(QWidget *parent) :
     gifLabel->setMovie(movie1);
     movie1->start();
 
-    QMovie *movie2 = new QMovie("gif/raft3.gif"); // For gifLabel2
+    QMovie *movie2 = new QMovie("gif/raft3extendedallframes.gif"); // For gifLabel2
     gifLabel2->setMovie(movie2);
     backgroundLabel->setMovie(movie);
     movie2->start();
@@ -236,15 +236,13 @@ void Dialog::handleButtonClick(QPushButton *button)
 void Dialog::onStartButtonClicked()
 {
     // Hide the start button, game title, and show the game elements
-	gifLabel->setVisible(false);
+	marqueeLabel->setVisible(false);
+    marqueeLabel->setGeometry(0, 800, 800, 30);
+    gifLabel->setVisible(false);
     gifLabel2->setVisible(true);
     startButton->setVisible(false);
     gameTitleLabel->setVisible(false);
     langName->setVisible(true);  // Show instructions when the game starts
-    marqueeLabel->setVisible(false);
-    marqueeLabel->setGeometry(0, 800, 800, 30);
-	marqueeLabel2->setVisible(false);
-    marqueeLabel2->setGeometry(0, 800, 800, 30);
 
     for (QPushButton* button : buttons) {
         button->setVisible(true);
@@ -253,7 +251,12 @@ void Dialog::onStartButtonClicked()
 	gifLabel2->setVisible(true);
     ui->rerollButton->setVisible(true);
     lcdScore->setVisible(true);
+
+    // Match the size of gifLabel2 to rerollButton
+    gifLabel2->setGeometry(ui->rerollButton->geometry());
+    gifLabel2->setScaledContents(true);
 }
+
 
 void Dialog::updateScore()
 {
