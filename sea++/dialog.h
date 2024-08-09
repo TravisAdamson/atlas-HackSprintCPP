@@ -43,6 +43,7 @@ private:
     QLabel *gameTitleLabel;  // Add this member
     QLabel *langName;  // Add this member for instructions
 	QLabel *gifLabel;
+    QLabel *gifLabel2;
     QWidget *backWidget;
     QPushButton *startButton;
 	QMediaPlayer *effect = new QMediaPlayer(this);

@@ -32,16 +32,20 @@ Dialog::Dialog(QWidget *parent) :
     backWidget = ui->backgroundWidget;
     startButton = ui->startButton;
 	gifLabel = ui->gifLabel;
+    gifLabel2 = ui->gifLabel2;
 
     backWidget->resize(800, 600);
     backWidget->setGeometry(0, 0, 800, 600);
     QLabel *backgroundLabel = new QLabel(backWidget);
     QMovie *movie = new QMovie("gif/water_pa.gif");
-	QMovie *backmovie = new QMovie("gif/cratego.gif");
+	QMovie *movie1 = new QMovie("gif/cratego.gif"); // For gifLabel
+    gifLabel->setMovie(movie1);
+    movie1->start();
 
-	gifLabel->setMovie(backmovie);
-	backmovie->start();
+    QMovie *movie2 = new QMovie("gif/raft3.gif"); // For gifLabel2
+    gifLabel2->setMovie(movie2);
     backgroundLabel->setMovie(movie);
+    movie2->start();
     movie->start();
     backgroundLabel->resize(800, 600);
     backgroundLabel->setGeometry(0, 0, 800, 600);
@@ -213,6 +217,7 @@ void Dialog::onStartButtonClicked()
 {
     // Hide the start button, game title, and show the game elements
 	gifLabel->setVisible(false);
+    gifLabel2->setVisible(true);
     startButton->setVisible(false);
     gameTitleLabel->setVisible(false);
     langName->setVisible(true);  // Show instructions when the game starts
@@ -295,11 +300,10 @@ void Dialog::checkWinCondition()
         QMessageBox winMsgBox(this);
         winMsgBox.setGeometry(0, 0, 400, 300);
         winMsgBox.setStyleSheet("color: black;\nbackground-color: white");
-        winMsgBox.setText(winMessage.arg(points)); // Inject points into the message
-        winMsgBox.setWindowTitle("Congratulations!");
-
         QPushButton *playAgainButton = winMsgBox.addButton("Play Again", QMessageBox::ActionRole);
         QPushButton *exitButton = winMsgBox.addButton("Quit", QMessageBox::RejectRole);
+        winMsgBox.setText(winMessage.arg(points)); // Inject points into the message
+        winMsgBox.setWindowTitle("Congratulations!");
 
         playAgainButton->setDisabled(false);
         exitButton->setDisabled(false);

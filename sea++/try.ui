@@ -261,6 +261,19 @@ padding: 3px;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="gifLabel2">
+    <property name="geometry">
+     <rect>
+      <x>349</x>
+      <y>449</y>
+      <width>111</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QLabel" name="langName">
    <property name="geometry">
@@ -314,19 +327,20 @@ background-color: blanchedalmond;</string>
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>540</y>
+     <y>500</y>
      <width>100</width>
-     <height>25</height>
+     <height>100</height>
     </rect>
    </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: orange;</string>
+    <string notr="true">border-image:url(gif/raft3.gif) 0 0 0 0 stretch stretch;
+font: 75 oblique 12pt &quot;DejaVu Sans&quot;;</string>
    </property>
    <property name="text">
-    <string>Reroll</string>
+    <string>Set Sail</string>
    </property>
   </widget>
   <widget class="QLabel" name="scoreLabel">
