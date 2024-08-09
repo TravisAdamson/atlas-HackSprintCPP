@@ -25,14 +25,15 @@ Dialog::Dialog(QWidget *parent) :
     messageBoxOpen(false)
 {
     ui->setupUi(this);
-
-    scoreLabel = ui->scoreLabel;
+	lcdScore = ui->lcdNumber;
+	lcdScore->setVisible(false);
     gameTitleLabel = ui->gameTitleLabel;  // Initialize the game title label
     langName = ui->langName;  // Initialize the instructions label
     backWidget = ui->backgroundWidget;
     startButton = ui->startButton;
 	gifLabel = ui->gifLabel;
     gifLabel2 = ui->gifLabel2;
+	gifLabel2->setVisible(false);
 
     backWidget->resize(800, 600);
     backWidget->setGeometry(0, 0, 800, 600);
@@ -60,7 +61,6 @@ Dialog::Dialog(QWidget *parent) :
         button->setVisible(false);
     }
     ui->rerollButton->setVisible(false);
-    scoreLabel->setVisible(false);
     langName->setVisible(false);  // Hide instructions initially
 
     // Connect the start button to the slot
@@ -225,21 +225,19 @@ void Dialog::onStartButtonClicked()
     for (QPushButton* button : buttons) {
         button->setVisible(true);
     }
+
+	gifLabel2->setVisible(true);
     ui->rerollButton->setVisible(true);
-    scoreLabel->setVisible(true);
+    lcdScore->setVisible(true);
 }
 
 void Dialog::updateScore()
 {
-    if (points < 0)
+    if (points < 0) {
         points = 0;
-    
-    if (scoreLabel)
-    {
-        // Correctly format HTML string
-        QString scoreText = QString("<font face='monospace' color= blue style='background-color: blanchedalmond;'>Score: %1</font>").arg(points);
-        scoreLabel->setText(scoreText);
-    }
+	}
+
+	lcdScore->display(points);
 }
 
 
@@ -296,7 +294,7 @@ void Dialog::checkWinCondition()
         // QString winMessage = QString("<font color='green' size='10'>"
         //                "Your score is: <span style='font-family: monospace; color: #00FF00; background-color: #000000; padding: 2px; border-radius: 5px;'>%1</span>"
         //                "</font><br><br>").arg(points) + "<b><font color='blue' size='6'>Correct Terms and Definitions:</font></b><br><br>" + definitionsList;
- 
+
         QMessageBox winMsgBox(this);
         winMsgBox.setGeometry(0, 0, 400, 300);
         winMsgBox.setStyleSheet("color: black;\nbackground-color: white");

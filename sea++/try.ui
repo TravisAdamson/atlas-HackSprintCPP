@@ -261,19 +261,6 @@ padding: 3px;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="gifLabel2">
-    <property name="geometry">
-     <rect>
-      <x>349</x>
-      <y>449</y>
-      <width>111</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
   </widget>
   <widget class="QLabel" name="langName">
    <property name="geometry">
@@ -327,7 +314,7 @@ background-color: blanchedalmond;</string>
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>500</y>
+     <y>510</y>
      <width>100</width>
      <height>100</height>
     </rect>
@@ -335,46 +322,15 @@ background-color: blanchedalmond;</string>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
    </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
    <property name="styleSheet">
-    <string notr="true">border-image:url(gif/raft3.gif) 0 0 0 0 stretch stretch;
-font: 75 oblique 12pt &quot;DejaVu Sans&quot;;</string>
+    <string notr="true">\font: 75 oblique 12pt &quot;DejaVu Sans&quot;;
+background-color: transparent;</string>
    </property>
    <property name="text">
     <string>Set Sail</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="scoreLabel">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>520</y>
-     <width>241</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>24</pointsize>
-    </font>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: blue;
-background-color: blanchedalmond;</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Box</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Sunken</enum>
-   </property>
-   <property name="lineWidth">
-    <number>5</number>
-   </property>
-   <property name="text">
-    <string>Score: </string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_7">
@@ -1146,6 +1102,42 @@ padding: 3px;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLCDNumber" name="lcdNumber">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>520</y>
+     <width>221</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: blanchedalmond;
+color: blue;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Panel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <property name="lineWidth">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gifLabel2">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>510</y>
+     <width>111</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>backgroundWidget</zorder>
   <zorder>pushButton_3</zorder>
   <zorder>pushButton_2</zorder>
@@ -1155,8 +1147,6 @@ padding: 3px;</string>
   <zorder>pushButton_27</zorder>
   <zorder>pushButton_26</zorder>
   <zorder>langName</zorder>
-  <zorder>rerollButton</zorder>
-  <zorder>scoreLabel</zorder>
   <zorder>pushButton_7</zorder>
   <zorder>pushButton_14</zorder>
   <zorder>pushButton_8</zorder>
@@ -1183,6 +1173,9 @@ padding: 3px;</string>
   <zorder>gameTitleLabel</zorder>
   <zorder>gifLabel</zorder>
   <zorder>startButton</zorder>
+  <zorder>lcdNumber</zorder>
+  <zorder>gifLabel2</zorder>
+  <zorder>rerollButton</zorder>
  </widget>
  <tabstops>
   <tabstop>pushButton_1</tabstop>

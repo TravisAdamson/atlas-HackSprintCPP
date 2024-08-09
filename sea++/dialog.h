@@ -10,6 +10,7 @@
 #include <QRandomGenerator>
 #include <QWidget>
 #include <QMediaPlayer>
+#include <QLCDNumber>
 
 namespace Ui {
 class Dialog;
@@ -45,6 +46,7 @@ private:
 	QLabel *gifLabel;
     QLabel *gifLabel2;
     QWidget *backWidget;
+	QLCDNumber *lcdScore = new QLCDNumber;
     QPushButton *startButton;
 	QMediaPlayer *effect = new QMediaPlayer(this);
 	QMediaPlayer *ceffect = new QMediaPlayer(this);
