@@ -22,7 +22,9 @@ Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog),
     points(0),
-    messageBoxOpen(false)
+    messageBoxOpen(false),
+    marqueePosition(0),
+    marqueePosition2(0)
 {
     ui->setupUi(this);
 	lcdScore = ui->lcdNumber;
@@ -71,6 +73,24 @@ Dialog::Dialog(QWidget *parent) :
     connect(ui->rerollButton, &QPushButton::clicked, this, &Dialog::resetGame);
 
     updateScore();
+
+    // Initialize the first marquee
+    marqueeLabel = new QLabel("Developed by: Matt Ernst, Nolan Heald, Travis Adamson", this);
+    marqueeLabel->setGeometry(0, 570, 800, 30);
+    marqueeLabel->setAlignment(Qt::AlignLeft);  // Align text to left to start scrolling from right
+    marqueeLabel->setStyleSheet("background-color: transparent; color: white; font-weight: 900; font-size: 24px; font-family: 'Scoreboard';");
+
+    // Initialize the second marquee
+    marqueeLabel2 = new QLabel("Developed by: Matt Ernst, Nolan Heald, Travis Adamson", this);
+    marqueeLabel2->setGeometry(0, 540, 800, 30);
+    marqueeLabel2->setAlignment(Qt::AlignLeft);  // Align text to left to start scrolling from right
+    marqueeLabel2->setStyleSheet("background-color: transparent; color: white; font-weight: 900; font-size: 24px; font-family: 'Scoreboard';");
+
+
+    marqueeTimer = new QTimer(this);
+    connect(marqueeTimer, &QTimer::timeout, this, &Dialog::updateMarquee);
+    marqueeTimer->start(20); // Adjust speed as needed
+
 }
 
 Dialog::~Dialog()
@@ -221,6 +241,10 @@ void Dialog::onStartButtonClicked()
     startButton->setVisible(false);
     gameTitleLabel->setVisible(false);
     langName->setVisible(true);  // Show instructions when the game starts
+    marqueeLabel->setVisible(false);
+    marqueeLabel->setGeometry(0, 800, 800, 30);
+	marqueeLabel2->setVisible(false);
+    marqueeLabel2->setGeometry(0, 800, 800, 30);
 
     for (QPushButton* button : buttons) {
         button->setVisible(true);
@@ -322,3 +346,21 @@ void Dialog::checkWinCondition()
         winMsgBox.exec();
     }
 }
+void Dialog::updateMarquee()
+{
+    int marqueeWidth = marqueeLabel->fontMetrics().boundingRect(marqueeLabel->text()).width();
+    int marqueeWidth2 = marqueeLabel2->fontMetrics().boundingRect(marqueeLabel2->text()).width();
+    marqueePosition -= 1;
+    marqueePosition2 -= 1;
+    if (marqueePosition < -marqueeWidth) {
+        marqueePosition = backWidget->width();
+    }
+    if (marqueePosition2 < -marqueeWidth2) {
+        marqueePosition2 = backWidget->width();
+    }
+    marqueeLabel->move(marqueePosition, marqueeLabel->y());
+    marqueeLabel2->move(marqueePosition2, marqueeLabel2->y());
+}
+
+
+
