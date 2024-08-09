@@ -1087,7 +1087,7 @@ padding-bottom: 55px;</string>
    <property name="styleSheet">
     <string notr="true">color: rgb(255, 255, 255);
 background-color: blanchedalmond;
-border-image:url(gif/Sea++_Logo.png);
+border-image:url(gif/Sea++_Logo_Vignette.png);
 background: transparent;
 padding: 3px;</string>
    </property>
