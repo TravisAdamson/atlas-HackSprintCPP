@@ -54,7 +54,6 @@ Dialog::Dialog(QWidget *parent) :
     backgroundLabel->setGeometry(0, 0, 800, 600);
     backgroundLabel->setScaledContents(true);
     backgroundLabel->show();
-	qDebug() << startButton->styleSheet();
     initializeButtons();
     assignValuesToButtons();
 
@@ -79,7 +78,7 @@ Dialog::Dialog(QWidget *parent) :
     marqueeLabel->setGeometry(0, 570, 800, 30);
     marqueeLabel->setAlignment(Qt::AlignLeft);  // Align text to left to start scrolling from right
     marqueeLabel->setStyleSheet("background-color: transparent; color: white; font-weight: 900; font-size: 24px; font-family: 'Scoreboard';");
-
+	marqueeLabel->setVisible(false);
     // Initialize the second marquee
     marqueeLabel2 = new QLabel("Developed by: Matt Ernst, Nolan Heald, Travis Adamson", this);
     marqueeLabel2->setGeometry(0, 540, 800, 30);
@@ -89,7 +88,7 @@ Dialog::Dialog(QWidget *parent) :
 
     marqueeTimer = new QTimer(this);
     connect(marqueeTimer, &QTimer::timeout, this, &Dialog::updateMarquee);
-    marqueeTimer->start(20); // Adjust speed as needed
+    marqueeTimer->start(10); // Adjust speed as needed
 
 }
 
@@ -155,7 +154,6 @@ void Dialog::assignValuesToButtons()
         QString value = AllTerms[which_list][which_value];
         buttonValues[button] = value;
         button->setText(value);
-        qDebug() << "Button" << i << "assigned value:" << value;
     }
 }
 
@@ -172,10 +170,6 @@ void Dialog::resetGame()
     }
 
     assignValuesToButtons();
-
-    for (QPushButton* button : buttons) {
-        qDebug() << "Button text after reset:" << button->text();
-    }
 }
 
 void Dialog::onButtonClicked()
@@ -211,13 +205,11 @@ void Dialog::handleButtonClick(QPushButton *button)
         points -= 50;
         updateScore();
         QTimer *timer = new QTimer(this);
-        qDebug() << "Button text: " + button->text();
-        		button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(:/img/gif/cratei.jpg);\nbackground: transparent;\npadding: 3px;");
+        button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(:/img/gif/cratei.jpg);\nbackground: transparent;\npadding: 3px;");
 
         connect(timer, &QTimer::timeout, [this, button, timer]() {
-            if (button) {
+        	if (button) {
                 assignNewValueToButton(button);
-                qDebug() << "Button text: " + button->text();
         		button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(:/img/gif/crate.jpg);\nbackground: transparent;\npadding: 3px;");
                 updateScore();
                 checkWinCondition();
@@ -238,6 +230,7 @@ void Dialog::onStartButtonClicked()
     // Hide the start button, game title, and show the game elements
 	marqueeLabel->setVisible(false);
     marqueeLabel->setGeometry(0, 800, 800, 30);
+	marqueeLabel2->setVisible(false);
     gifLabel->setVisible(false);
     gifLabel2->setVisible(true);
     startButton->setVisible(false);
