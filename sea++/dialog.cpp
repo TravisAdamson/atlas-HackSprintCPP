@@ -319,7 +319,7 @@ void Dialog::checkWinCondition()
         winMsgBox.setGeometry(0, 0, 400, 300);
         winMsgBox.setStyleSheet("color: black;\nbackground-color: white");
         QPushButton *playAgainButton = winMsgBox.addButton("Play Again", QMessageBox::ActionRole);
-        QPushButton *exitButton = winMsgBox.addButton("Quit", QMessageBox::RejectRole);
+        QPushButton *exitButton = winMsgBox.addButton("Walk the plank", QMessageBox::RejectRole);
         winMsgBox.setText(winMessage.arg(points)); // Inject points into the message
         winMsgBox.setWindowTitle("Congratulations!");
 
