@@ -54,10 +54,8 @@ private:
 	int points;
     bool messageBoxOpen;
 
-    QLabel *marqueeLabel; // Marquee label
     QLabel *marqueeLabel2; // Marquee label
     QTimer *marqueeTimer; // Timer for marquee
-    int marqueePosition;  // Position of the marquee text
     int marqueePosition2;  // Position of the marquee text
 };
 

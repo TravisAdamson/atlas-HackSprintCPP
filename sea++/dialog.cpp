@@ -23,7 +23,6 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog),
     points(0),
     messageBoxOpen(false),
-    marqueePosition(0),
     marqueePosition2(0)
 {
     ui->setupUi(this);
@@ -73,14 +72,8 @@ Dialog::Dialog(QWidget *parent) :
 
     updateScore();
 
-    // Initialize the first marquee
-    marqueeLabel = new QLabel("Developed by: Matt Ernst, Nolan Heald, and Travis Adamson", this);
-    marqueeLabel->setGeometry(0, 570, 800, 30);
-    marqueeLabel->setAlignment(Qt::AlignLeft);  // Align text to left to start scrolling from right
-    marqueeLabel->setStyleSheet("background-color: transparent; color: white; font-weight: 900; font-size: 24px; font-family: 'Scoreboard';");
-	marqueeLabel->setVisible(false);
     // Initialize the second marquee
-    marqueeLabel2 = new QLabel("Developed by: Matt Ernst, Nolan Heald, and Travis Adamson", this);
+    marqueeLabel2 = new QLabel("Developed by: Matt Ernst, Nolan Heald, & Travis Adamson", this);
     marqueeLabel2->setGeometry(0, 540, 800, 30);
     marqueeLabel2->setAlignment(Qt::AlignLeft);  // Align text to left to start scrolling from right
     marqueeLabel2->setStyleSheet("background-color: transparent; color: white; font-weight: 900; font-size: 24px; font-family: 'Scoreboard';");
@@ -202,7 +195,7 @@ void Dialog::handleButtonClick(QPushButton *button)
     } else {
 		effect->play();
         button->setDisabled(true);
-        points -= 50;
+        points -= 25;
         updateScore();
         QTimer *timer = new QTimer(this);
         button->setStyleSheet("color: rgb(255, 255, 255);\nbackground-color: blanchedalmond;\nborder-image:url(:/img/gif/cratei.jpg);\nbackground: transparent;\npadding: 3px;");
@@ -228,8 +221,6 @@ void Dialog::handleButtonClick(QPushButton *button)
 void Dialog::onStartButtonClicked()
 {
     // Hide the start button, game title, and show the game elements
-	marqueeLabel->setVisible(false);
-    marqueeLabel->setGeometry(0, 800, 800, 30);
 	marqueeLabel2->setVisible(false);
     gifLabel->setVisible(false);
     gifLabel2->setVisible(true);
@@ -344,17 +335,11 @@ void Dialog::checkWinCondition()
 }
 void Dialog::updateMarquee()
 {
-    int marqueeWidth = marqueeLabel->fontMetrics().boundingRect(marqueeLabel->text()).width();
     int marqueeWidth2 = marqueeLabel2->fontMetrics().boundingRect(marqueeLabel2->text()).width();
-    marqueePosition -= 1;
     marqueePosition2 -= 1;
-    if (marqueePosition < -marqueeWidth) {
-        marqueePosition = backWidget->width();
-    }
     if (marqueePosition2 < -marqueeWidth2) {
         marqueePosition2 = backWidget->width();
     }
-    marqueeLabel->move(marqueePosition, marqueeLabel->y());
     marqueeLabel2->move(marqueePosition2, marqueeLabel2->y());
 }
 
