@@ -74,13 +74,13 @@ Dialog::Dialog(QWidget *parent) :
     updateScore();
 
     // Initialize the first marquee
-    marqueeLabel = new QLabel("Developed by: Matt Ernst, Nolan Heald, Travis Adamson", this);
+    marqueeLabel = new QLabel("Developed by: Matt Ernst, Nolan Heald, and Travis Adamson", this);
     marqueeLabel->setGeometry(0, 570, 800, 30);
     marqueeLabel->setAlignment(Qt::AlignLeft);  // Align text to left to start scrolling from right
     marqueeLabel->setStyleSheet("background-color: transparent; color: white; font-weight: 900; font-size: 24px; font-family: 'Scoreboard';");
 	marqueeLabel->setVisible(false);
     // Initialize the second marquee
-    marqueeLabel2 = new QLabel("Developed by: Matt Ernst, Nolan Heald, Travis Adamson", this);
+    marqueeLabel2 = new QLabel("Developed by: Matt Ernst, Nolan Heald, and Travis Adamson", this);
     marqueeLabel2->setGeometry(0, 540, 800, 30);
     marqueeLabel2->setAlignment(Qt::AlignLeft);  // Align text to left to start scrolling from right
     marqueeLabel2->setStyleSheet("background-color: transparent; color: white; font-weight: 900; font-size: 24px; font-family: 'Scoreboard';");

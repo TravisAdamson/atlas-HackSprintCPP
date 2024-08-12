@@ -288,7 +288,7 @@ padding: 3px;</string>
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
+    <string notr="true">color: #2e6BFF;
 background-color: blanchedalmond;</string>
    </property>
    <property name="frameShape">
@@ -322,7 +322,7 @@ background-color: blanchedalmond;</string>
    <property name="font">
     <font>
      <family>DejaVu Sans 13</family>
-     <pointsize>16</pointsize>
+     <pointsize>17</pointsize>
      <weight>9</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -335,16 +335,14 @@ background-color: blanchedalmond;</string>
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: blue;
-font: 75 16pt &quot;DejaVu Sans&quot; bold;
+    <string notr="true">color: #E1FFFF;
+font: 75 17pt &quot;DejaVu Sans&quot; bold;
 background-color: transparent;
-border: none;
-text-align: left;
-padding-left: 55px;</string>
+border: none;</string>
    </property>
    <property name="text">
-    <string>Set
-Sail</string>
+    <string>New
+Treasure</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_7">
@@ -1121,7 +1119,7 @@ padding: 3px;</string>
     <rect>
      <x>10</x>
      <y>520</y>
-     <width>180</width>
+     <width>160</width>
      <height>70</height>
     </rect>
    </property>
@@ -1138,6 +1136,9 @@ color: blue;</string>
    <property name="lineWidth">
     <number>5</number>
    </property>
+   <property name="digitCount">
+    <number>4</number>
+   </property>
   </widget>
   <widget class="QLabel" name="gifLabel2">
    <property name="geometry">
@@ -1150,6 +1151,9 @@ color: blue;</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <zorder>backgroundWidget</zorder>
