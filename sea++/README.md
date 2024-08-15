@@ -1,5 +1,7 @@
 # Sea++ Application
 
+![Sea++ Logo](https://github.com/TravisAdamson/atlas-HackSprintCPP/blob/9aa445bb1860eecc5fb94f094605e44309bf70c6/sea%2B%2B/gif/Sea%2B%2B_Logo_Vignette.png)
+
 ## Overview
 Sea++ is a graphical user interface (GUI) application designed with Qt that features a dialog window with interactive buttons and a dynamic layout. This application is structured using Qt’s framework, providing a visually appealing and user-friendly interface.
 
